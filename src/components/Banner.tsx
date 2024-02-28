@@ -1,5 +1,6 @@
 "use client";
-import { FC, useEffect, useState, useRef } from "react";
+import { FC, useRef } from "react";
+import useMobile from "@/hooks/useMobile";
 
 import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from "react-image-gallery";
@@ -7,7 +8,7 @@ import ImageGallery from "react-image-gallery";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 
 const Banner: FC = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const { isMobile } = useMobile();
   const images = [
     {
       original: `/images/banner1${isMobile ? "m" : "d"}.webp`,
@@ -18,10 +19,6 @@ const Banner: FC = () => {
   ];
 
   const slideRef = useRef<ImageGallery>(null);
-
-  useEffect(() => {
-    setIsMobile(window.innerWidth <= 600);
-  }, []);
 
   return (
     <section className="max-w-f-hd mx-auto relative group">
