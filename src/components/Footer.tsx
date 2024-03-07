@@ -52,7 +52,7 @@ function Whatsapp() {
 
 function Mail() {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-envelope" viewBox="0 0 16 16" style={{verticalAlign: "middle"}}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-envelope" viewBox="0 0 16 16" style={{ verticalAlign: "middle" }}>
             <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
         </svg>
     )
@@ -64,7 +64,7 @@ interface LinkListProps {
 }
 function LinkList({ array, hasIcons }: LinkListProps) {
     return (
-        <ul className={hasIcons ? "flex justify-between" : ""}>
+        <ul className={hasIcons ? "flex justify-between" : "flex flex-col gap-4"}>
             {
                 array.map((item) => (
                     hasIcons ? (
@@ -125,10 +125,10 @@ function Footer({ }: FooterProps) {
     ]
 
     return (
-        <footer className="flex flex-col items-center justify-center w-full px-[100px] pt-[100px] bg-[#1C2023] text-white">
+        <footer className="flex flex-col items-center justify-center w-full px-[100px] pt-[100px] pb-[50px] bg-[#1C2023] text-white">
             <div className="flex justify-between w-full max-w-[1920px] mb-[100px]">
                 {/* LOGO */}
-                <div className="flex flex-col items-center justify-between gap-8">
+                <div className="flex flex-col items-center gap-8">
                     <Image
                         src={logo}
                         alt="Actualiza tu carro logo."
@@ -136,14 +136,14 @@ function Footer({ }: FooterProps) {
                         style={{ aspectRatio: '664 / 381' }}
                     />
                     <div className='w-full'>
-                        <span>Siguenos</span>
+                        <div className="mb-4 text-[20px] font-bold">Síguenos</div>
                         <LinkList array={SOCIALMEDIA_LINKS} hasIcons={true} />
                     </div>
                 </div>
                 {/* LINKS */}
-                <div className="flex justify-between">
+                <div className="flex justify-between flex-1 px-[8vw]">
                     <div>
-                        <span>Categorías</span>
+                        <div className="mb-4 text-[20px] font-bold">Categorías</div>
                         <nav>
                             <ul>
                                 <LinkList array={NAV_LINKS.categories} hasIcons={false} />
@@ -151,36 +151,36 @@ function Footer({ }: FooterProps) {
                         </nav>
                     </div>
                     <div>
-                        <div>
-                            <span>Empresa</span>
+                        <div className="mb-[24px]">
+                            <div className="mb-4 text-[20px] font-bold">Empresa</div>
                             <nav>
                                 <LinkList array={NAV_LINKS.company} hasIcons={false} />
                             </nav>
                         </div>
                         <div>
-                            <span>Comunidad</span>
+                            <div className="mb-4 text-[20px] font-bold">Comunidad</div>
                             <nav>
                                 <LinkList array={NAV_LINKS.community} hasIcons={false} />
                             </nav>
                         </div>
                     </div>
                     <div>
-                        <span>Compra</span>
+                        <div className="mb-4 text-[20px] font-bold">Compra</div>
                         <nav>
                             <LinkList array={NAV_LINKS.purchase} hasIcons={false} />
                         </nav>
                     </div>
                 </div>
                 {/* CONTACT & PAYMENT METHODS */}
-                <div className="flex flex-col items-end justify-between">
+                <div className="flex flex-col items-end gap-[50px]">
                     <div className="flex items-end gap-[16px]">
                         <div className="flex items-center gap-4 w-fit p-4 bg-white text-black">
                             <Whatsapp />
-                            <span>+54 1234567891</span>
+                            <span className="text-nowrap">+54 1234567891</span>
                         </div>
                         <div className="flex items-center gap-4 w-fit p-4 bg-white text-black">
                             <Mail />
-                            <span>customersupport@emails.com</span>
+                            <span className="text-nowrap">customersupport@emails.com</span>
                         </div>
                     </div>
                     <Image
@@ -191,9 +191,9 @@ function Footer({ }: FooterProps) {
                     />
                 </div>
             </div>
-            <p className="text-xs text-white text-center pb-4 pt-4 max-w-[1920px]">
+            <div className="text-smtext-center pt-[50px] w-full text-center max-w-[1920px] border-t border-t-white border-opacity-[.1]">
                 ©Copyrigth 2024. Todos los derechos reservados - Desarrollado por: <strong>Work Team</strong>
-            </p>
+            </div>
         </footer>
     );
 };
