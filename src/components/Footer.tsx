@@ -3,80 +3,43 @@ import React from 'react';
 import Image from 'next/image';
 import footerLogo from '../../public/images/logoFooter.webp';
 
-interface FooterProps {}
+interface FooterProps { }
 function Footer({ }: FooterProps) {
 
     const NAV_LINKS = [
         {
             categories: [
-                {
-                    name: "Farolas",
-                    path: ""
-                },
-                {
-                    name: "Stops",
-                    path: ""
-                },
-                {
-                    name: "Audio",
-                    path: ""
-                },
-                {
-                    name: "Exploradoras",
-                    path: ""
-                },
-                {
-                    name: "Exterior",
-                    path: ""
-                },
-                {
-                    name: "Interior",
-                    path: ""
-                },
-                {
-                    name: "Bombillos",
-                    path: ""
-                },
-                {
-                    name: "Repuestos",
-                    path: ""
-                }
+                { name: "Farolas", path: "" },
+                { name: "Stops", path: "" },
+                { name: "Audio", path: "" },
+                { name: "Exploradoras", path: "" },
+                { name: "Exterior", path: "" },
+                { name: "Interior", path: "" },
+                { name: "Bombillos", path: "" },
+                { name: "Repuestos", path: "" }
             ],
             company: [
-                {
-                    name: "¿Quiénes somos?",
-                    path: ""
-                },
-                {
-                    name: "Aviso legal",
-                    path: ""
-                }
+                { name: "¿Quiénes somos?", path: "" },
+                { name: "Aviso legal", path: "" }
             ],
             community: [
-                {
-                    name: "Contáctanos",
-                    path: ""
-                },
-                {
-                    name: "Soporte",
-                    path: ""
-                },
-                {
-                    name: "Blog",
-                    path: ""
-                }
+                { name: "Contáctanos", path: "" },
+                { name: "Soporte", path: "" },
+                { name: "Blog", path: "" }
             ],
             purchase: [
-                {
-                    name: "Mi cuenta",
-                    path: ""
-                },
-                {
-                    name: "¿Cómo comprar?",
-                    path: ""
-                }
+                { name: "Mi cuenta", path: "" },
+                { name: "¿Cómo comprar?", path: "" }
             ]
         }
+    ]
+
+    const SOCIALMEDIA_LINKS = [
+        { icon: null, path: "" },
+        { icon: null, path: "" },
+        { icon: null, path: "" },
+        { icon: null, path: "" },
+        { icon: null, path: "" }
     ]
 
     return (
@@ -98,14 +61,14 @@ function Footer({ }: FooterProps) {
                     </div>
                 </div>
                 {/* LINKS */}
-                <div className="flex flex-col gap-12 items-center justify-between flex-1">                    
+                <div className="flex flex-col gap-12 items-center justify-between flex-1">
                     <nav className="flex flex-col items-center justify-center text-white whitespace-nowrap">
                         <a className="relative uppercase after:content-[''] after:absolute after:-bottom-0 after:left-0 after:w-full after:h-[2.5px] after:bg-secondary-lm after:scale-x-0 after:transform after:origin-bottom-right after:transition-transform hover:after:scale-x-100 hover:after:origin-bottom-left">
                             Contacto
                         </a>
                     </nav>
                     <nav>
-                        
+
                     </nav>
                     <nav>
 
