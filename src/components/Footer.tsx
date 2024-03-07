@@ -1,7 +1,8 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import footerLogo from '../../public/images/logoFooter.webp';
+import logo from '../../public/images/logoFooter.webp';
+import paymentMethods from "../../public/images/mercadoPago.webp"
 
 interface LinkListProps {
     array: any[];
@@ -69,16 +70,17 @@ function Footer({ }: FooterProps) {
 
     return (
         <footer className="flex flex-col items-center justify-center w-full px-[100px] pt-[100px] bg-[#1C2023] text-white">
-            <div className="flex justify-between w-full max-w-[1920px]">
+            <div className="flex justify-between w-full max-w-[1920px] mb-[100px]">
                 {/* LOGO */}
                 <div className="flex flex-col items-center justify-between gap-8">
                     <Image
-                        src={footerLogo}
+                        src={logo}
                         alt="Actualiza tu carro logo."
-                        width="245"
+                        width={245}
                         style={{ aspectRatio: '664 / 381' }}
                     />
                     <div className='w-full'>
+                        <span>Siguenos</span>
                         <LinkList array={SOCIALMEDIA_LINKS} hasIcons={true} />
                     </div>
                 </div>
@@ -112,6 +114,25 @@ function Footer({ }: FooterProps) {
                             <LinkList array={NAV_LINKS.purchase} hasIcons={false} />
                         </nav>
                     </div>
+                </div>
+                {/* CONTACT & PAYMENT METHODS */}
+                <div className="flex flex-col items-end justify-between">
+                    <div className="flex items-end gap-[16px]">
+                        <div className="flex gap-4 w-fit p-4 bg-white text-black">
+                            <div className="size-[24px] bg-black" />
+                            <span>54 1234567891</span>
+                        </div>
+                        <div className="flex gap-4 w-fit p-4 bg-white text-black">
+                            <div className="size-[24px] bg-black" />
+                            <span>customersupport@emails.com</span>
+                        </div>
+                    </div>
+                    <Image
+                        src={paymentMethods}
+                        alt="Métodos de pago: Mercado pago."
+                        width={498}
+                        style={{aspectRatio: "257 / 73"}}
+                    />
                 </div>
             </div>
             <p className="text-xs text-white text-center pb-4 pt-4 max-w-[1920px]">
