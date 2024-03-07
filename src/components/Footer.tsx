@@ -3,6 +3,33 @@ import React from 'react';
 import Image from 'next/image';
 import footerLogo from '../../public/images/logoFooter.webp';
 
+interface LinkListProps {
+    array: any[];
+    hasIcons: boolean
+}
+function LinkList({ array, hasIcons }: LinkListProps) {
+    return (
+        <ul className={hasIcons ? "flex justify-between" : ""}>
+            {
+                array.map((item) => (
+                    hasIcons ? (
+                        <li key={item.name} className="size-[32px] rounded-full border border-primary-lm"></li>
+                    ) : (
+                        <li key={item.name}>
+                            <a
+                                className="relative after:content-[''] after:absolute after:-bottom-0 after:left-0 after:w-full after:h-[2.5px] after:bg-secondary-lm after:scale-x-0 after:transform after:origin-bottom-right after:transition-transform hover:after:scale-x-100 hover:after:origin-bottom-left"
+                                href={`/${item.path}`}
+                            >
+                                {item.name}
+                            </a>
+                        </li>
+                    )
+                ))
+            }
+        </ul>
+    )
+}
+
 interface FooterProps { }
 function Footer({ }: FooterProps) {
 
@@ -52,14 +79,7 @@ function Footer({ }: FooterProps) {
                         style={{ aspectRatio: '664 / 381' }}
                     />
                     <div className='w-full'>
-                        <ul className="flex justify-between">
-                            {
-                                SOCIALMEDIA_LINKS.map((item) => (
-                                    <li key={item.name} className="size-[32px] rounded-full border border-primary-lm"></li>
-                                ))
-                            }
-
-                        </ul>
+                        <LinkList array={SOCIALMEDIA_LINKS} hasIcons={true} />
                     </div>
                 </div>
                 {/* LINKS */}
@@ -68,18 +88,7 @@ function Footer({ }: FooterProps) {
                         <span>Categorías</span>
                         <nav>
                             <ul>
-                                {
-                                    NAV_LINKS.categories.map((category) => (
-                                        <li key={category.name}>
-                                            <a
-                                                className="relative after:content-[''] after:absolute after:-bottom-0 after:left-0 after:w-full after:h-[2.5px] after:bg-secondary-lm after:scale-x-0 after:transform after:origin-bottom-right after:transition-transform hover:after:scale-x-100 hover:after:origin-bottom-left"
-                                                href={`/${category.path}`}
-                                            >
-                                                {category.name}
-                                            </a>
-                                        </li>
-                                    ))
-                                }
+                                <LinkList array={NAV_LINKS.categories} hasIcons={false} />
                             </ul>
                         </nav>
                     </div>
@@ -87,59 +96,20 @@ function Footer({ }: FooterProps) {
                         <div>
                             <span>Empresa</span>
                             <nav>
-                                <ul>
-                                    {
-                                        NAV_LINKS.company.map((item) => (
-                                            <li key={item.name}>
-                                                <a
-                                                    className="relative after:content-[''] after:absolute after:-bottom-0 after:left-0 after:w-full after:h-[2.5px] after:bg-secondary-lm after:scale-x-0 after:transform after:origin-bottom-right after:transition-transform hover:after:scale-x-100 hover:after:origin-bottom-left"
-                                                    href={`/${item.path}`}
-                                                >
-                                                    {item.name}
-                                                </a>
-                                            </li>
-                                        ))
-                                    }
-                                </ul>
+                                <LinkList array={NAV_LINKS.company} hasIcons={false} />
                             </nav>
                         </div>
                         <div>
                             <span>Comunidad</span>
                             <nav>
-                                <ul>
-                                    {
-                                        NAV_LINKS.community.map((item) => (
-                                            <li key={item.name}>
-                                                <a
-                                                    className="relative after:content-[''] after:absolute after:-bottom-0 after:left-0 after:w-full after:h-[2.5px] after:bg-secondary-lm after:scale-x-0 after:transform after:origin-bottom-right after:transition-transform hover:after:scale-x-100 hover:after:origin-bottom-left"
-                                                    href={`/${item.path}`}
-                                                >
-                                                    {item.name}
-                                                </a>
-                                            </li>
-                                        ))
-                                    }
-                                </ul>
+                                <LinkList array={NAV_LINKS.community} hasIcons={false} />
                             </nav>
                         </div>
                     </div>
                     <div>
                         <span>Compra</span>
                         <nav>
-                            <ul>
-                                {
-                                    NAV_LINKS.purchase.map((item) => (
-                                        <li key={item.name}>
-                                            <a
-                                                className="relative after:content-[''] after:absolute after:-bottom-0 after:left-0 after:w-full after:h-[2.5px] after:bg-secondary-lm after:scale-x-0 after:transform after:origin-bottom-right after:transition-transform hover:after:scale-x-100 hover:after:origin-bottom-left"
-                                                href={`/${item.path}`}
-                                            >
-                                                {item.name}
-                                            </a>
-                                        </li>
-                                    ))
-                                }
-                            </ul>
+                            <LinkList array={NAV_LINKS.purchase} hasIcons={false} />
                         </nav>
                     </div>
                 </div>
