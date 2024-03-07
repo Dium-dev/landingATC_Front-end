@@ -173,7 +173,7 @@ function Footer({ }: FooterProps) {
                 </div>
                 {/* CONTACT & PAYMENT METHODS */}
                 <div className="flex flex-col items-end gap-[50px]">
-                    <div className="flex items-end gap-[16px]">
+                    <div className="flex xxxl:flex-row xl:flex-col items-end gap-[16px]">
                         <div className="flex items-center gap-4 w-fit p-4 bg-white text-black">
                             <Whatsapp />
                             <span className="text-nowrap">+54 1234567891</span>
@@ -188,10 +188,11 @@ function Footer({ }: FooterProps) {
                         alt="Métodos de pago: Mercado pago."
                         width={498}
                         style={{ aspectRatio: "257 / 73" }}
+                        className="xxxl:w-[498px] xl:w-[286px]"
                     />
                 </div>
             </div>
-            <div className="text-smtext-center pt-[50px] w-full text-center max-w-[1920px] border-t border-t-white border-opacity-[.1]">
+            <div className="w-full pt-[50px] max-w-[1920px] border-t border-t-white border-opacity-[.1] text-sm text-center">
                 ©Copyrigth 2024. Todos los derechos reservados - Desarrollado por: <strong>Work Team</strong>
             </div>
         </footer>
