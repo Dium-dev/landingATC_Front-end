@@ -62,13 +62,14 @@ function Footer({ }: FooterProps) {
         <footer className="flex flex-col items-center justify-center w-full px-[100px] pt-[100px] pb-[25px] bg-[#1C2023] text-white">
             <div className="flex justify-between items-stretch w-full max-w-[1920px] mb-[100px]">
                 {/* LOGO AND SOCIAL MEDIA */}
-                <div className="flex gap-[100px]">
+                <div className="flex md:gap-[100px] ms:gap-[50px] md:mr-[100px] ms:mr-[50px]">
                     <div className="flex flex-col items-center justify-between">
                         <Image
                             src={logo}
                             alt="Actualiza tu carro logo."
-                            width={300}
+                            // width={280}
                             style={{ aspectRatio: '664 / 381' }}
+                            className="ms:w-[180px] ms:max-w-[180px] md:w-[280px] md:max-w-[280px]"
                         />
                         <nav className='w-full'>
                             <ul className="flex justify-between">
@@ -83,11 +84,11 @@ function Footer({ }: FooterProps) {
                         </nav>
                     </div>
                     <div className="h-[240px] w-[1.5px] bg-white bg-opacity-[.1]" />
+                    {/* <div className="hidden md:flex w-[2px] h-60 bg-gradient-to-t from-background-dm via-white to-background-dm md:ml-16 "></div> */}
                 </div>
-                {/* <div className="hidden md:flex w-[2px] h-60 bg-gradient-to-t from-background-dm via-white to-background-dm md:ml-16 "></div> */}
                 {/* LINKS, CONTACT AND PAYMENT METHODS */}
-                <div className="flex flex-1 flex-col items-center justify-between">
-                    <nav className="w-[498px]">
+                <div className="flex flex-1 flex-col items-center justify-between ms:w-[400px] ms:max-w-[400px] md:w-[500px] md:max-w-[500px]">
+                    <nav className="w-full">
                         <ul className="flex justify-between w-full">
                             {
                                 NAV_LINKS.map((item) => (
@@ -109,9 +110,9 @@ function Footer({ }: FooterProps) {
                     <Image
                         src={paymentMethods}
                         alt="Métodos de pago: Mercado pago."
-                        width={498}
+                        width={400}
                         style={{ aspectRatio: "257 / 73" }}
-                        className=""
+                        className="ms:w-[400px] ms:max-w-[400px] md:w-[500px] md:max-w-[500px]"
                     />
                 </div>
             </div>
