@@ -68,8 +68,7 @@ function Footer({ }: FooterProps) {
                             src={logo}
                             alt="Actualiza tu carro logo."
                             width={180}
-                            style={{ aspectRatio: '664 / 381' }}
-                            className="w-[180px] max-w-[180px] md:w-[200px] md:max-w-[200px] lg:w-[230px] lg:max-w-[230px] mx-[40px] md:mx-[25px]"
+                            className="aspect-[664/381] mx-[40px]"
                         />
                         <nav className='w-full'>
                             <ul className="flex justify-between">
@@ -83,12 +82,11 @@ function Footer({ }: FooterProps) {
                             </ul>
                         </nav>
                     </div>
-                    {/* <div className="hidden md:block h-[200px] w-[1.5px] md:mx-[100px] ms:mx-[50px] bg-white bg-opacity-[.1]" /> */}
-                    <div className="hidden md:block h-[200px] w-[1.5px] md:mx-[100px] ms:mx-[50px] bg-gradient-to-t from-[#1C2023] via-white to-background-[#1C2023]"/>
+                    <div className="hidden md:block h-[200px] w-[1.5px] md:mx-[100px] ms:mx-[50px] bg-gradient-to-t from-[#1C2023] via-white to-background-[#1C2023]" />
                 </div>
                 {/* LINKS, CONTACT AND PAYMENT METHODS */}
                 <div className="flex flex-1 flex-col items-center justify-between gap-[50px] md:gap-0">
-                    <nav className="w-fit xs:w-[400px] xs:max-w-[400px] md:w-[450px] md:max-w-[450px] lg:w-[500px] lg:max-w-[500px]">
+                    <nav className="w-fit xs:w-[400px]">
                         <ul className="flex flex-col xs:flex-row items-center justify-between gap-[24px] xs:gap-0 w-full">
                             {
                                 NAV_LINKS.map((item) => (
@@ -110,14 +108,13 @@ function Footer({ }: FooterProps) {
                     <Image
                         src={paymentMethods}
                         alt="Métodos de pago: Mercado pago."
-                        width={400}
-                        style={{ aspectRatio: "257 / 73" }}
-                        className="ms:w-[400px] ms:max-w-[400px] md:w-[450px] md:max-w-[450px] lg:w-[500px] lg:max-w-[500px]"
+                        width={250}
+                        className="aspect-[257/73] w-[250px] xs:w-[400px]"
                     />
                 </div>
             </div>
-            <div className="block w-full h-[1.5px] md:mx-[100px] ms:mx-[50px] bg-white bg-opacity-[.1]" />
-            <div className="w-full  pt-[25px] max-w-[1920px] text-xs text-center">
+            <div className="w-full max-w-[1920px] h-[1.5px] md:mx-[100px] ms:mx-[50px] bg-white bg-opacity-[.1]" />
+            <div className="w-full pt-[25px] max-w-[1920px] text-xs text-center">
                 ©Copyrigth 2024. Todos los derechos reservados - Desarrollado por: <strong>Work Team</strong>
             </div>
         </footer>
