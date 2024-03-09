@@ -59,17 +59,17 @@ function Footer({ }: FooterProps) {
     ]
 
     return (
-        <footer className="flex flex-col items-center justify-center w-full px-[100px] pt-[100px] pb-[25px] bg-[#1C2023] text-white">
-            <div className="flex flex-col md:flex-row justify-between items-center md:items-stretch w-full max-w-[1920px] mb-[100px]">
+        <footer className="flex flex-col items-center justify-center w-full px-[20px] md:px-[100px] pt-[100px] pb-[25px] bg-[#1C2023] text-white">
+            <div className="flex flex-col md:flex-row justify-between items-center md:items-stretch gap-[50px] md:gap-0 w-full max-w-[1920px] mb-[50px] md:mb-[100px]">
                 {/* LOGO AND SOCIAL MEDIA */}
                 <div className="flex">
-                    <div className="flex flex-col items-center justify-between gap-[16px]">
+                    <div className="flex flex-col items-center justify-between gap-[24px] md:gap-[16px]">
                         <Image
                             src={logo}
                             alt="Actualiza tu carro logo."
                             width={180}
                             style={{ aspectRatio: '664 / 381' }}
-                            className="ms:w-[180px] ms:max-w-[180px] md:w-[200px] md:max-w-[200px] lg:w-[230px] lg:max-w-[230px] md:mx-[25px]"
+                            className="w-[180px] max-w-[180px] md:w-[200px] md:max-w-[200px] lg:w-[230px] lg:max-w-[230px] mx-[40px] md:mx-[25px]"
                         />
                         <nav className='w-full'>
                             <ul className="flex justify-between">
@@ -83,19 +83,19 @@ function Footer({ }: FooterProps) {
                             </ul>
                         </nav>
                     </div>
-                    <div className="hidden md:block h-[200px] w-[1.5px] md:mx-[100px] ms:mx-[50px] bg-white bg-opacity-[.1]" />
-                    {/* <div className="hidden md:block h-[200px] w-[1.5px] md:mx-[100px] ms:mx-[50px] bg-gradient-to-t from-[#1C2023] via-white to-background-[#1C2023]"/> */}
+                    {/* <div className="hidden md:block h-[200px] w-[1.5px] md:mx-[100px] ms:mx-[50px] bg-white bg-opacity-[.1]" /> */}
+                    <div className="hidden md:block h-[200px] w-[1.5px] md:mx-[100px] ms:mx-[50px] bg-gradient-to-t from-[#1C2023] via-white to-background-[#1C2023]"/>
                 </div>
                 {/* LINKS, CONTACT AND PAYMENT METHODS */}
-                <div className="flex flex-1 flex-col items-center justify-between">
-                    <nav className="ms:w-[400px] ms:max-w-[400px] md:w-[450px] md:max-w-[450px] lg:w-[500px] lg:max-w-[500px]">
-                        <ul className="flex justify-between w-full">
+                <div className="flex flex-1 flex-col items-center justify-between gap-[50px] md:gap-0">
+                    <nav className="w-fit xs:w-[400px] xs:max-w-[400px] md:w-[450px] md:max-w-[450px] lg:w-[500px] lg:max-w-[500px]">
+                        <ul className="flex flex-col xs:flex-row items-center justify-between gap-[24px] xs:gap-0 w-full">
                             {
                                 NAV_LINKS.map((item) => (
                                     <li key={item.name}>
                                         <a
                                             href={item.path}
-                                            className="relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2.5px] after:bg-secondary-lm after:scale-x-0 after:transform after:origin-bottom-right after:transition-transform hover:after:scale-x-100 hover:after:origin-bottom-left"
+                                            className="relative inline-block text-center after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2.5px] after:bg-secondary-lm after:scale-x-0 after:transform after:origin-bottom-right after:transition-transform hover:after:scale-x-100 hover:after:origin-bottom-left"
                                         >
                                             {item.name}
                                         </a>
@@ -116,7 +116,8 @@ function Footer({ }: FooterProps) {
                     />
                 </div>
             </div>
-            <div className="w-full pt-[25px] max-w-[1920px] text-sm text-center">
+            <div className="block w-full h-[1.5px] md:mx-[100px] ms:mx-[50px] bg-white bg-opacity-[.1]" />
+            <div className="w-full  pt-[25px] max-w-[1920px] text-xs text-center">
                 ©Copyrigth 2024. Todos los derechos reservados - Desarrollado por: <strong>Work Team</strong>
             </div>
         </footer>
