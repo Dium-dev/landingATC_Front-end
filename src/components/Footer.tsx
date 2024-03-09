@@ -60,22 +60,22 @@ function Footer({ }: FooterProps) {
 
     return (
         <footer className="flex flex-col items-center justify-center w-full px-[100px] pt-[100px] pb-[25px] bg-[#1C2023] text-white">
-            <div className="flex justify-between items-stretch w-full max-w-[1920px] mb-[100px]">
+            <div className="flex flex-col md:flex-row justify-between items-center md:items-stretch w-full max-w-[1920px] mb-[100px]">
                 {/* LOGO AND SOCIAL MEDIA */}
-                <div className="flex md:gap-[100px] ms:gap-[50px] md:mr-[100px] ms:mr-[50px]">
-                    <div className="flex flex-col items-center justify-between">
+                <div className="flex">
+                    <div className="flex flex-col items-center justify-between gap-[16px]">
                         <Image
                             src={logo}
                             alt="Actualiza tu carro logo."
-                            // width={280}
+                            width={180}
                             style={{ aspectRatio: '664 / 381' }}
-                            className="ms:w-[180px] ms:max-w-[180px] md:w-[280px] md:max-w-[280px]"
+                            className="ms:w-[180px] ms:max-w-[180px] md:w-[200px] md:max-w-[200px] lg:w-[230px] lg:max-w-[230px] md:mx-[25px]"
                         />
                         <nav className='w-full'>
                             <ul className="flex justify-between">
                                 {
                                     SOCIALMEDIA_LINKS.map((item) => (
-                                        <li key={item.name} className="grid place-items-center size-[32px] rounded-full border border-primary-lm">
+                                        <li key={item.name} className="grid place-items-center size-[40px] rounded-full border border-primary-lm">
                                             <item.icon />
                                         </li>
                                     ))
@@ -83,12 +83,12 @@ function Footer({ }: FooterProps) {
                             </ul>
                         </nav>
                     </div>
-                    <div className="h-[240px] w-[1.5px] bg-white bg-opacity-[.1]" />
-                    {/* <div className="hidden md:flex w-[2px] h-60 bg-gradient-to-t from-background-dm via-white to-background-dm md:ml-16 "></div> */}
+                    <div className="hidden md:block h-[200px] w-[1.5px] md:mx-[100px] ms:mx-[50px] bg-white bg-opacity-[.1]" />
+                    {/* <div className="hidden md:block h-[200px] w-[1.5px] md:mx-[100px] ms:mx-[50px] bg-gradient-to-t from-[#1C2023] via-white to-background-[#1C2023]"/> */}
                 </div>
                 {/* LINKS, CONTACT AND PAYMENT METHODS */}
-                <div className="flex flex-1 flex-col items-center justify-between ms:w-[400px] ms:max-w-[400px] md:w-[500px] md:max-w-[500px]">
-                    <nav className="w-full">
+                <div className="flex flex-1 flex-col items-center justify-between">
+                    <nav className="ms:w-[400px] ms:max-w-[400px] md:w-[450px] md:max-w-[450px] lg:w-[500px] lg:max-w-[500px]">
                         <ul className="flex justify-between w-full">
                             {
                                 NAV_LINKS.map((item) => (
@@ -112,7 +112,7 @@ function Footer({ }: FooterProps) {
                         alt="Métodos de pago: Mercado pago."
                         width={400}
                         style={{ aspectRatio: "257 / 73" }}
-                        className="ms:w-[400px] ms:max-w-[400px] md:w-[500px] md:max-w-[500px]"
+                        className="ms:w-[400px] ms:max-w-[400px] md:w-[450px] md:max-w-[450px] lg:w-[500px] lg:max-w-[500px]"
                     />
                 </div>
             </div>
