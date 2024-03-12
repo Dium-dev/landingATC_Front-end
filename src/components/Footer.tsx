@@ -3,30 +3,10 @@ import React from 'react';
 import Image from 'next/image';
 import logo from '../../public/images/logoFooter.webp';
 import paymentMethods from "../../public/images/mercadoPago.webp"
+import { NAV_LINKS, SOCIALMEDIA_LINKS } from '@/utils/constants';
 // import Form
-import facebook from "../../public/icons/facebook.svg"
-import twitterx from "../../public/icons/x.svg"
-import youtube from "../../public/icons/youtube.svg"
-import instagram from "../../public/icons/instagram.svg"
-import pinterest from "../../public/icons/pinterest.svg"
 
-interface FooterProps { }
-function Footer({ }: FooterProps) {
-
-    const NAV_LINKS = [
-        { name: 'Nosotros', path: '/aboutUs' },
-        { name: '¿Cómo comprar?', path: '/como-comprar' },
-        { name: 'Blog', path: 'https://actualizatucarro.blogspot.com/' }
-    ];
-
-    const SOCIALMEDIA_LINKS = [
-        { name: "Facebook", src: facebook, path: "" },
-        { name: "Twitter", src: twitterx, path: "" },
-        { name: "Youtube", src: youtube, path: "" },
-        { name: "Instagram", src: instagram, path: "" },
-        { name: "Pinterest", src: pinterest, path: "" }
-    ]
-
+function Footer({ }) {
     return (
         <footer className="flex flex-col items-center justify-center w-full px-[20px] md:px-[100px] pt-[100px] pb-[25px] bg-[#1C2023] text-white">
             <div className="flex flex-col md:flex-row justify-between items-center md:items-stretch gap-[50px] md:gap-0 w-full max-w-[1920px] mb-[50px] md:mb-[100px]">
@@ -48,7 +28,9 @@ function Footer({ }: FooterProps) {
                                                 src={item.src}
                                                 alt={item.name}
                                                 loading="lazy"
-                                                className="block size-[40px]"
+                                                width={40}
+                                                height={40}
+                                                className="block"
                                             />
                                         </li>
                                     ))
