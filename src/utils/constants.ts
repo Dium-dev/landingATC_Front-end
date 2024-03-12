@@ -151,6 +151,6 @@ export const SOCIALMEDIA_LINKS = [
     { name: "Facebook", src: "/icons/facebook.svg", path: "" },
     { name: "Twitter", src: "/icons/x.svg", path: "" },
     { name: "Youtube", src: "/icons/youtube.svg", path: "" },
-    { name: "Instagram", src: "/icons/instagram.svg", path: "" },
-    { name: "Pinterest", src: "/icons/pinterest.svg", path: "" }
+    { name: "Pinterest", src: "/icons/pinterest.svg", path: "" },
+    { name: "Instagram", src: "/icons/instagram.svg", path: "" }
 ]
