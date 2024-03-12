@@ -1,4 +1,4 @@
-import { Brand } from "@/utils/loadBrands";
+import { Brand } from "@/types";
 import Image from "next/image";
 
 interface BrandCardProps {
