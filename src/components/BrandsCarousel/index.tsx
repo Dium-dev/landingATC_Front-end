@@ -6,7 +6,7 @@ import { BRANDS } from "@/utils/constants";
 const BrandsCarousel: FC = () => {
 
   return (
-    <section className="max-w-f-hd mx-auto h-max">
+    <section className="max-w-f-hd mx-auto mb-4 h-max">
       <Carousel brands={BRANDS}/>
     </section>
   );
