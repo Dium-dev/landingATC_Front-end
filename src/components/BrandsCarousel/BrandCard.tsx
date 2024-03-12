@@ -10,7 +10,8 @@ export const BrandCard = ({ brand }: BrandCardProps) => {
   return (
     <Link
       className="flex items-center justify-center cursor-pointer w-max ms:m-6 mx-1 hover:scale-125 transition-all"
-      href={"shop.actualizatucarro.com/"}
+      href={"https://shop.actualizatucarro.com/"}
+      target="_blank"
     >
       <Image
         src={brand.image}
