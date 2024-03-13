@@ -40,3 +40,105 @@ export const CATEGORIES = [
     name: "Stops",
   },
 ];
+export const BRANDS = [
+  {
+    name: "Audi",
+    image: "/images/brands/audi-logo.webp"
+  },
+  {
+    name: "BMW",
+    image: "/images/brands/bmw-logo.webp"
+  },
+  {
+    name: "Chevrolet",
+    image: "/images/brands/chevrolet-logo.webp"
+  },
+  {
+    name: "Dodge",
+    image: "/images/brands/dodge-logo.webp"
+  },
+  {
+    name: "Ferrari",
+    image: "/images/brands/ferrari-logo.webp"
+  },
+  {
+    name: "Ford",
+    image: "/images/brands/ford-logo.webp"
+  },
+  {
+    name: "Honda",
+    image: "/images/brands/honda-logo.webp"
+  },
+  {
+    name: "Hyundai",
+    image: "/images/brands/hyundai-logo.webp"
+  },
+  {
+    name: "Jeep",
+    image: "/images/brands/jeep-logo.webp"
+  },
+  {
+    name: "Kia",
+    image: "/images/brands/kia-logo.webp"
+  },
+  {
+    name: "Lamborghini",
+    image: "/images/brands/lamborghini-logo.webp"
+  },
+  {
+    name: "Land Rover",
+    image: "/images/brands/land-rover-logo.webp"
+  },
+  {
+    name: "Lexus",
+    image: "/images/brands/lexus-logo.webp"
+  },
+  {
+    name: "Mazda",
+    image: "/images/brands/mazda-logo.webp"
+  },
+  {
+    name: "Mercedes Benz",
+    image: "/images/brands/mercedes-benz-logo.webp"
+  },
+  {
+    name: "Mini",
+    image: "/images/brands/mini-logo.webp"
+  },
+  {
+    name: "Mitsubishi",
+    image: "/images/brands/mitsubishi-logo.webp"
+  },
+  {
+    name: "Nissan",
+    image: "/images/brands/nissan-logo.webp"
+  },
+  {
+    name: "Porsche",
+    image: "/images/brands/porsche-logo.webp"
+  },
+  {
+    name: "RAM",
+    image: "/images/brands/ram-logo.webp"
+  },
+  {
+    name: "Subaru",
+    image: "/images/brands/subaru-logo.webp"
+  },
+  {
+    name: "Tesla",
+    image: "/images/brands/tesla-logo.webp"
+  },
+  {
+    name: "Toyota",
+    image: "/images/brands/toyota-logo.webp"
+  },
+  {
+    name: "Volkswagen",
+    image: "/images/brands/volkswagen-logo.webp"
+  },
+  {
+    name: "Volvo",
+    image: "/images/brands/volvo-logo.webp"
+  },
+]
