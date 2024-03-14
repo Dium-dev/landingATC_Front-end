@@ -1,9 +1,12 @@
-interface ButtonProps {
+type ButtonProps = {
   variant?: Variant
   color?: Color
   className?: string
   children: React.ReactNode
-}
+} & React.DetailedHTMLProps<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
+>
 
 const variants = ['Primary', 'Secondary', 'Tertiary'] as const
 type Variant = (typeof variants)[number]
