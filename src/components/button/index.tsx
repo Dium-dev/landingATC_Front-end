@@ -1,4 +1,5 @@
 type ButtonProps = {
+  ownStyles?: boolean
   variant?: Variant
   color?: Color
   className?: string
@@ -18,9 +19,10 @@ export function Button({
   color = 'Default',
   className,
   children,
+  ownStyles = false,
   ...props
 }: ButtonProps) {
-  const variant_style =
+  let variant_style =
     variant === 'Secondary'
       ? `border ${color === 'Red' ? 'border-primary-lm text-primary-lm' : ''}`
       : variant === 'Tertiary'
@@ -33,7 +35,7 @@ export function Button({
 
   return (
     <button
-      className={`px-3 py-1 text-base font-medium rounded transition-all ease-in-out ${variant_style} ${className} xxxl:px-0`}
+      className={`px-3 py-1 text-base font-medium rounded transition-all ease-in-out ${ ownStyles || variant_style} ${className} xxxl:px-0`}
       {...props}
     >
       {children}

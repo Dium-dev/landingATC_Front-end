@@ -1,8 +1,8 @@
 'use client'
 import { useTheme } from 'next-themes'
 import { Button } from './button'
-import { IoSunny } from "react-icons/io5";
-import { HiMiniMoon } from "react-icons/hi2";
+import { IoSunny } from 'react-icons/io5'
+import { HiMiniMoon } from 'react-icons/hi2'
 
 export function ThemeModeButton() {
   const { systemTheme, theme, setTheme } = useTheme()
@@ -13,6 +13,7 @@ export function ThemeModeButton() {
 
   return (
     <Button
+      ownStyles
       className="group hover:bg-primary-dm/20 aspect-square h-9 w-9 px-[3px] py-[3px] transition-all ease-in-out"
       onClick={handleTheme}
     >

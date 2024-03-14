@@ -25,7 +25,7 @@ module.exports = {
   theme: {
     colors: {
       'background-lm': '#f1f1f1',
-      'background-dm': '#13131d',
+      'background-dm': '#121212',
       'primary-lm': '#fe0000',
       'primary-dm': '#444444',
       'secondary-lm': '#F20505',
