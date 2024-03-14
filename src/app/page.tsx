@@ -7,12 +7,16 @@ export const metadata: Metadata = {
   description: 'Accesorios premiun para autos tipo Original',
   keywords: ['accesorios', 'repuestos', 'farolas', 'stops', 'tuning'],
 }
+import Blog from "@/components/Blog";
+import BrandsCarousel from "@/components/BrandsCarousel";
 
 export default function Home() {
   return (
     <main>
       <Banner />
       <Categories />
+      <BrandsCarousel />
+      <Blog />
     </main>
   )
 }
