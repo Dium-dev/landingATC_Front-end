@@ -1,23 +1,27 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+'use client'
+import { Inter } from 'next/font/google'
+import './globals.css'
+import { NavBar } from './(nav-bar)'
+import { ThemeProvider } from 'next-themes'
 
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Actualizatucarro",
-  description: "Accesorios premiun para autos tipo Original",
-  keywords: ["accesorios", "repuestos", "farolas", "stops", "tuning"],
-};
+const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="es">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={inter.className}
+        style={{ maxWidth: '1920px', margin: '0 auto' }}
+      >
+        <ThemeProvider attribute="class">
+          <NavBar />
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
-  );
+  )
 }
