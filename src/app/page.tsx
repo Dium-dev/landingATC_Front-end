@@ -9,6 +9,9 @@ export const metadata: Metadata = {
 }
 import Blog from "@/components/Blog";
 import BrandsCarousel from "@/components/BrandsCarousel";
+import { Reviews } from "@/components/Reviews";
+import { ReviewsSkeleton } from "@/components/Reviews/ReviewsSkeleton";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -17,6 +20,9 @@ export default function Home() {
       <Categories />
       <BrandsCarousel />
       <Blog />
+      <Suspense fallback={<ReviewsSkeleton />}>
+        <Reviews />
+      </Suspense>
     </main>
   )
 }

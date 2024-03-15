@@ -1,69 +1,110 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  darkMode: 'class',
+import type { Config } from "tailwindcss";
+
+const config = {
+  darkMode: ["class"],
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/stories/**/*.{js,ts,jsx,tsx}',
-    './src/assets/**/*.{js,ts,jsx,tsx}'
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
-    safelist: [
-    'xs:min-w-[calc(100%/3)]',
-    'xs:min-w-[calc(100%/5)]',
-    'ms:min-w-[calc(100%/3)]',
-    'ms:min-w-[calc(100%/4)]',
-    'ms:min-w-[calc(100%/5)]',
-    'md:min-w-[calc(100%/4)]',
-    'md:min-w-[calc(100%/5)]',
-    'lg:min-w-[calc(100%/5)]',
-    {
-        pattern: /min-w-./,
-        variants: ['xl', 'lg', 'md', 'ms', 'xs']
-    }
-  ],
+  prefix: "",
   theme: {
-    colors: {
-      'background-lm': '#f1f1f1',
-      'background-dm': '#121212',
-      'primary-lm': '#fe0000',
-      'primary-dm': '#444444',
-      'secondary-lm': '#F20505',
-      'secondary-dm': '#555555',
-      'secondary-background': '#ffff',
-      'text-lm': '#333333',
-      'text-dm': '#f1f1f1',
-      'input-bg': '#FFF2F7',
-      white: '#fff',
-      black: '#000',
-      green: '#008000',
-      gray: '#DCDCDC'
-    },
-    screens: {
-      xs: '480px',
-      ms: '768px',
-      md: '1080px',
-      lg: '1200px',
-      xl: '1480px',
-      xxl: '1899px',
-      xxxl: '1920px'
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
     },
     extend: {
+      colors: {
+        "background-lm": "#f1f1f1",
+        "background-dm": "#13131d",
+        "primary-lm": "#fe0000",
+        "primary-dm": "#444444",
+        "secondary-lm": "#F20505",
+        "secondary-dm": "#555555",
+        "secondary-background": "#ffff",
+        "text-lm": "#333333",
+        "text-dm": "#f1f1f1",
+        "input-bg": "#FFF2F7",
+        white: "#fff",
+        black: "#000",
+        green: "#008000",
+        gray: "#DCDCDC",
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+      },
+      screens: {
+        xs: "480px",
+        ms: "768px",
+        md: "1080px",
+        lg: "1200px",
+        xl: "1480px",
+        xxl: "1899px",
+        xxxl: "1920px",
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
       backgroundImage: {
         banner:
           'url("/images/backgroundBlog.webp")',
       },
-
       maxWidth: {
-        'f-hd': '1920px',
+        "f-hd": "1920px",
       },
-      minWidth: {
-        100: '100px',
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
-      gap: {
-        50: '50px',
-      },
-      plugins: [],
     },
   },
-};
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config;
+
+export default config;

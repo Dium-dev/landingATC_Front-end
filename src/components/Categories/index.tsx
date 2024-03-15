@@ -1,7 +1,7 @@
 import { FC } from "react";
 import CategoryCard from "./CategoryCard";
 
-import { CATEGORIES } from "@/utils/constants";
+import { CATEGORIES } from "@/lib/constants";
 
 const Categories: FC = () => {
   return (
