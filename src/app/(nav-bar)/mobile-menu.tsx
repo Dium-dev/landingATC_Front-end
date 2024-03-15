@@ -50,7 +50,7 @@ export function MobileMenu({ buttonValue, open, handleOPen, routes }: Props) {
           ref={bgRef}
         >
           <div
-            className="h-full bg-background-lm  -translate-x-full max-w-[290px] py-6 pl-4 pr-3 gap-8 flex flex-col dark:bg-background-dm transition-all ease-in-out"
+            className="h-full bg-background-lm  -translate-x-ful max-w-[290px] xs:max-w-[350px] py-6 pl-4 pr-3 gap-8 flex flex-col dark:bg-background-dm transition-all ease-in-out"
             onClick={(e) => e.stopPropagation()}
             ref={navRef}
           >
@@ -110,7 +110,7 @@ export function MobileMenu({ buttonValue, open, handleOPen, routes }: Props) {
             </ul>
             <div>
               <hr className="border-secondary-dm/50 pb-8" />
-              <p className="pl-3 flex items-center justify-between font-medium">
+              <p className="pl-3 flex items-center justify-between font-medium xs:justify-center gap-10">
                 Claro {<ToggleTheme />} Oscuro
               </p>
             </div>
