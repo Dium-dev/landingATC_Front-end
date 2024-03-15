@@ -1,8 +1,11 @@
+import { Review } from "@/types";
 import { ReviewsMarquee } from "./ReviewsMarquee";
 import { getReviews } from "@/actions/reviews";
 
 export const Reviews = async () => {
-  const reviews = await getReviews();
+  const reviews: Review[] = await getReviews();
+
+  if(!reviews.length) return null
 
   return (
     <section
