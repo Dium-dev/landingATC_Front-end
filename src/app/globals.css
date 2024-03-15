@@ -2,6 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-body, html, :root {
+body,
+html,
+:root {
   height: 100%;
+}
+
+.pulse_bg {
+  animation: pulse-bg 0.5s alternate;
+}
+
+@keyframes pulse-bg {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@layer base {
+  *::-webkit-scrollbar{
+    @apply w-2 mr-2;
+  }
+  *::-webkit-scrollbar-track{
+    @apply rounded-full bg-background-lm dark:bg-background-dm;
+  }
+  *::-webkit-scrollbar-thumb{
+    @apply rounded-full bg-background-dm/70 dark:bg-primary-dm;
+  }
 }

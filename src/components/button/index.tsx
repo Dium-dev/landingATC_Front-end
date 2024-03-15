@@ -35,7 +35,7 @@ export function Button({
 
   return (
     <button
-      className={`px-3 py-1 text-base font-medium rounded transition-all ease-in-out ${ ownStyles || variant_style} ${className} xxxl:px-0`}
+      className={`px-3 py-1 text-base font-medium rounded transition-all ease-in-out ${ ownStyles || variant_style} ${className}`}
       {...props}
     >
       {children}
