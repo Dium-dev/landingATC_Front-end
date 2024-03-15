@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { useEffect, type ReactNode, useState } from 'react'
+import { useEffect, type ReactNode, useState, useRef, LegacyRef } from 'react'
 
 import { ToggleTheme } from '@/components/theme-mode'
 import { useRouter } from 'next/navigation'
@@ -20,7 +20,14 @@ export function MobileMenu({ buttonValue, open, handleOPen, routes }: Props) {
   const [curIndex, setCurIndex] = useState(0)
   const handleCurIndex = (index: number) => setCurIndex(index ? index : 0)
   const route = useRouter()
+  const navRef: LegacyRef<HTMLDivElement> = useRef(null)
+  const bgRef: LegacyRef<HTMLDivElement> = useRef(null)
+
   useEffect(() => {
+    setTimeout(() => {
+      navRef.current?.classList.remove('-translate-x-full')
+      bgRef.current?.classList.remove('opacity-0')
+    }, 100)
     document.body.style.overflow = open ? 'hidden' : ''
   }, [open])
 
@@ -31,16 +38,21 @@ export function MobileMenu({ buttonValue, open, handleOPen, routes }: Props) {
       </button>
       {open && (
         <div
-          id="background-mobile"
-          className="fixed top-0 left-0 h-screen bg-background-dm/70 w-full z-[60] ms:hidden transition-opacity duration-200 ease-in-out"
-          onClick={handleOPen}
+          className="fixed top-0 left-0 opacity-0 h-screen bg-background-dm/70 w-full z-[60] ms:hidden transition-opacity duration-200 ease-in-out"
+          onClick={() => {
+            navRef.current?.classList.add('-translate-x-full')
+            bgRef.current?.classList.add('opacity-0')
+
+            setTimeout(() => {
+              handleOPen()
+            }, 280)
+          }}
+          ref={bgRef}
         >
           <div
-            style={{
-              animation: '1s mobile-menu-animate',
-            }}
-            className="h-full bg-background-lm max-w-[290px] py-6 pl-4 pr-3 gap-8 flex flex-col dark:bg-background-dm transition-all ease-in-out"
+            className="h-full bg-background-lm  -translate-x-full max-w-[290px] py-6 pl-4 pr-3 gap-8 flex flex-col dark:bg-background-dm transition-all ease-in-out"
             onClick={(e) => e.stopPropagation()}
+            ref={navRef}
           >
             <header className="flex items-center justify-between">
               <Image
@@ -53,7 +65,12 @@ export function MobileMenu({ buttonValue, open, handleOPen, routes }: Props) {
               <button
                 className="w-8 p-1 aspect-square text-secondary-dm/90 "
                 onClick={() => {
-                  handleOPen()
+                  navRef.current?.classList.add('-translate-x-full')
+                  bgRef.current?.classList.add('opacity-0')
+
+                  setTimeout(() => {
+                    handleOPen()
+                  }, 280)
                 }}
               >
                 <HiOutlineX className="w-full h-full" />
@@ -88,9 +105,7 @@ export function MobileMenu({ buttonValue, open, handleOPen, routes }: Props) {
               ))}
 
               <li>
-                <Button className='w-full text-start'>
-                  Contacto
-                </Button>
+                <Button className="w-full text-start">Contacto</Button>
               </li>
             </ul>
             <div>

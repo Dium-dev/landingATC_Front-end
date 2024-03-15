@@ -22,13 +22,13 @@ html,
 }
 
 @layer base {
-  *::-webkit-scrollbar{
+  *::-webkit-scrollbar {
     @apply w-2 mr-2;
   }
-  *::-webkit-scrollbar-track{
+  *::-webkit-scrollbar-track {
     @apply rounded-full bg-background-lm dark:bg-background-dm;
   }
-  *::-webkit-scrollbar-thumb{
+  *::-webkit-scrollbar-thumb {
     @apply rounded-full bg-background-dm/70 dark:bg-primary-dm;
   }
 }
