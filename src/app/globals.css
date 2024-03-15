@@ -69,14 +69,22 @@ html,
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  *::-webkit-scrollbar {
+    @apply w-2 mr-2;
+  }
+  *::-webkit-scrollbar-track {
+    @apply rounded-full bg-background-lm dark:bg-background-dm;
+  }
+  *::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-background-dm/70 dark:bg-primary-dm;
   }
 }
