@@ -10,7 +10,7 @@ interface ReviewCardProps {
 
 export const ReviewCard = ({ review }: ReviewCardProps) => {
   return (
-    <article className="w-60 ms:w-96 p-4 space-y-3 shadow-lg mx-4 my-6 rounded-lg border border-black border-opacity-15 bg-white">
+    <article className="w-60 ms:w-96 p-4 space-y-3 shadow-lg mx-4 my-6 rounded-lg border border-black border-opacity-15 bg-white dark:bg-primary-dm">
       <div className="h-32">
         <ImQuotesLeft size={30} color="red" />
         <div className="h-24 overflow-y-scroll">
