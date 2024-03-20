@@ -9,7 +9,7 @@ export const AboutUsBanner = () => {
           <h2 className="text-2xl xs:text-4xl ms:text-5xl text-primary-lm font-bold">
             Quienes somos
           </h2>
-          <Link href={"about"}>
+          <Link href={"about"} className="hover:scale-125 transition">
             <Image
               src={"/images/roundLogo.webp"}
               alt="Logo ATC"
@@ -49,7 +49,7 @@ export const AboutUsBanner = () => {
             alt="Logo ATC"
             width={180}
             height={180}
-            className="absolute -left-20 -bottom-6"
+            className="absolute -left-20 -bottom-6 hover:scale-125 transition"
           />
         </Link>
       </div>
