@@ -1,5 +1,6 @@
 import Banner from '@/components/Banner'
 import Categories from '@/components/Categories'
+import { AboutUsBanner } from '@/components/AboutUsBanner'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function Home() {
     <main>
       <Banner />
       <Categories />
+      <AboutUsBanner />
       <BrandsCarousel />
       <Blog />
       <Suspense fallback={<ReviewsSkeleton />}>
