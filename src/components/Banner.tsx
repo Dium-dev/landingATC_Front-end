@@ -33,7 +33,7 @@ const Banner: FC = () => {
           <button
             onClick={onClick}
             disabled={disabled}
-            className="hover:text-primary-lm transition-all ease-linear duration-300 absolute top-[50%] translate-y-[-50%] bg-background-lm z-10 p-2 rounded-full invisible group-hover:visible left-2 opacity-80"
+            className="hover:text-primary-lm transition-all ease-linear duration-300 absolute top-[50%] translate-y-[-50%] bg-background-lm z-10 p-2 rounded-full invisible ms:group-hover:visible left-2 opacity-80"
           >
             <BsChevronCompactLeft size={31} />
           </button>
@@ -42,7 +42,7 @@ const Banner: FC = () => {
           <button
             onClick={onClick}
             disabled={disabled}
-            className="hover:text-primary-lm transition-all ease-linear duration-300 absolute top-[50%] translate-y-[-50%] bg-background-lm z-10 p-2 rounded-full invisible group-hover:visible right-2 opacity-80"
+            className="hover:text-primary-lm transition-all ease-linear duration-300 absolute top-[50%] translate-y-[-50%] bg-background-lm z-10 p-2 rounded-full invisible ms:group-hover:visible right-2 opacity-80"
           >
             <BsChevronCompactRight size={31} />
           </button>
