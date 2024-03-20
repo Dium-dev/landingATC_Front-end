@@ -85,6 +85,6 @@ html,
     @apply rounded-full bg-background-lm dark:bg-background-dm;
   }
   *::-webkit-scrollbar-thumb {
-    @apply rounded-full bg-background-dm/70 dark:bg-primary-dm;
+    @apply rounded-full bg-background-dm/70 dark:bg-white/80;
   }
 }
