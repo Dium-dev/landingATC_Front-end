@@ -20,7 +20,7 @@ export const Carousel = ({ brands }: CarouselProps) => {
         pauseOnHover
         speed={40}
         gradient
-        gradientWidth={100}
+        gradientWidth={50}
         gradientColor={theme === "dark" ? "black" : "white"}
       >
         {brands.map((brand, i) => (
