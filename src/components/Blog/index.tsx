@@ -1,7 +1,6 @@
 "use client";
 import { ReactSVG } from "react-svg";
 import Link from "next/link";
-import Image from "next/image";
 import { FC } from "react";
 
 const Blog: FC = () => {
