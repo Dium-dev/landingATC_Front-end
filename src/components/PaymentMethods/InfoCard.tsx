@@ -8,9 +8,9 @@ interface InfoCardProps {
 
 export const InfoCard = ({ title, description, img }: InfoCardProps) => {
   return (
-    <article className="w-full flex flex-col items-center gap-y-1 border border-primary-lm">
+    <article className="w-full flex flex-col items-center gap-y-1">
       <Image src={img} width={85} height={85} alt={description} />
-      <div className="flex flex-col items-center gap-y-1 flex-1 border border-green">
+      <div className="flex flex-col items-center gap-y-1 flex-1">
         <h3 className="text-primary-lm font-bold text-lg ms:text-xl md:text-2xl">
           {title}
         </h3>
