@@ -142,3 +142,20 @@ export const BRANDS = [
     image: "/images/brands/volvo-logo.webp"
   },
 ]
+export const PAYMENT_METHODS = [
+  {
+    img: '/icons/contact.svg',
+    title: 'Todos los medios de pago',
+    description: 'Ofrecemos una variedad de métodos de pago seguros y confiables, para garantizar una experiencia de compra sin preocupaciones.'
+  },
+  {
+    img: '/icons/contact.svg',
+    title: 'Envío a todo el país',
+    description: 'Entregamos en todo Colombia, desde grandes ciudades hasta áreas rurales, con envíos rápidos, seguros y rasteables.'
+  },
+  {
+    img: '/icons/contact.svg',
+    title: 'Compra segura',
+    description: 'Tu seguridad es nuestra prioridad. Utilizamos tecnología SSL y métodos de pago verificados para proteger tus datos sin riesgos.'
+  }
+]
