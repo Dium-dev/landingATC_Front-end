@@ -13,6 +13,7 @@ import BrandsCarousel from "@/components/BrandsCarousel";
 import { Reviews } from "@/components/Reviews";
 import { PaymentMethods } from '@/components/PaymentMethods'
 import { ReviewsSkeleton } from "@/components/Reviews/ReviewsSkeleton";
+import { WhatsAppButton } from '@/components/WhatsAppButton'
 import { Suspense } from "react";
 
 export default function Home() {
@@ -27,6 +28,7 @@ export default function Home() {
         <Reviews />
       </Suspense>
       <PaymentMethods />
+      <WhatsAppButton />
     </main>
   )
 }
