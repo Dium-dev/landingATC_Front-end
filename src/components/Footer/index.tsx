@@ -10,6 +10,19 @@ function Footer({ }) {
     const { isMobile } = useMobile()
     const logo = `/images/footer/logoFooter${isMobile ? "M" : "D"}.webp`
 
+    const paymentLogo = [
+        { width: 64, height: 56, path: "/images/footer/ico-davivienda.webp" },
+        { width: 64, height: 56, path: "/images/footer/ico-bancolombia.webp" },
+        { width: 64, height: 56, path: "/images/footer/ico-efecty.webp" },
+        { width: 64, height: 56, path: "/images/footer/ico-pse.webp" },
+        { width: 113, height: 56, path: "/images/footer/ico-mp.webp" },
+        { width: 64, height: 56, path: "/images/footer/ico-mastercard.webp" },
+        { width: 64, height: 56, path: "/images/footer/ico-visa.webp" },
+        { width: 64, height: 56, path: "/images/footer/ico-ame.webp" },
+        { width: 64, height: 56, path: "/images/footer/ico-dinners.webp" },
+        { width: 154, height: 56, path: "/images/footer/ico-paypal.webp" },
+    ]
+
     return (
         // <footer className="flex flex-col items-center justify-center w-full px-2 md:px-[100px] pt-[32px] md:pt-[100px] pb-[20px] md:pb-[25px] bg-[#1C2023] text-white">
         <footer className="flex flex-col items-center justify-center w-full px-[20px] md:px-[100px] pt-[100px] pb-[25px] bg-[#1C2023] text-white">
@@ -47,12 +60,21 @@ function Footer({ }) {
                             </button>
                         </ul>
                     </nav>
-                    {/* <Image
-                        src={paymentMethods}
-                        alt="Métodos de pago: Mercado pago."
-                        width={250}
-                        className="aspect-[257/73] w-[250px] xs:w-[400px]"
-                    /> */}
+                    <div className="flex flex-wrap justify-center gap-[4px] ">
+                        {
+                            paymentLogo.map((icon) => (
+                                <Image
+                                    src={icon.path}
+                                    alt='logo'
+                                    width={icon.width}
+                                    height={icon.height}
+                                    className={`aspect-[${icon.width}/${icon.height}] h-[40px] w-auto`}
+                                >
+
+                                </Image>
+                            ))
+                        }
+                    </div>
                 </div>
             </div>
             <div className="w-full max-w-[1920px] h-[1.5px] md:mx-[100px] ms:mx-[50px] bg-white bg-opacity-[.1]" />

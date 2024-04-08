@@ -1,6 +1,7 @@
 import Banner from '@/components/Banner'
 import Categories from '@/components/Categories'
 import { AboutUsBanner } from '@/components/AboutUsBanner'
+import Footer from '@/components/Footer'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -29,6 +30,7 @@ export default function Home() {
       </Suspense>
       <PaymentMethods />
       <WhatsAppButton />
+      <Footer />
     </main>
   )
 }
