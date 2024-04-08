@@ -1,12 +1,15 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import { SocialMedia, NavLinks } from './FooterLinks';
-import logo from '../../../public/images/logoFooter.webp';
-import paymentMethods from "../../../public/images/mercadoPago.webp"
+import useMobile from '@/hooks/useMobile';
+import { SocialMedia, NavLinks } from '@/components/Footer/FooterLinks';
 // import Form
 
 function Footer({ }) {
+
+    const { isMobile } = useMobile()
+    const logo = `/images/footer/logoFooter${isMobile ? "M" : "D"}.webp`
+
     return (
         // <footer className="flex flex-col items-center justify-center w-full px-2 md:px-[100px] pt-[32px] md:pt-[100px] pb-[20px] md:pb-[25px] bg-[#1C2023] text-white">
         <footer className="flex flex-col items-center justify-center w-full px-[20px] md:px-[100px] pt-[100px] pb-[25px] bg-[#1C2023] text-white">
@@ -19,9 +22,9 @@ function Footer({ }) {
                         <Image
                             src={logo}
                             alt="Actualiza tu carro logo."
-                            // width={210}
-                            width={180}
-                            className="aspect-[664/381] mx-[40px]"
+                            className="aspect-[664/381] w-[180px] mx-[40px]"
+                            height={isMobile ? 99 : 381}
+                            width={664}
                         />
                         <nav className='w-full'>
                             <ul className="flex justify-between">
@@ -44,12 +47,12 @@ function Footer({ }) {
                             </button>
                         </ul>
                     </nav>
-                    <Image
+                    {/* <Image
                         src={paymentMethods}
                         alt="Métodos de pago: Mercado pago."
                         width={250}
                         className="aspect-[257/73] w-[250px] xs:w-[400px]"
-                    />
+                    /> */}
                 </div>
             </div>
             <div className="w-full max-w-[1920px] h-[1.5px] md:mx-[100px] ms:mx-[50px] bg-white bg-opacity-[.1]" />

@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { SOCIALMEDIA_LINKS, NAV_LINKS } from "@/utils/constants"
+import { SOCIALMEDIA_LINKS, NAV_LINKS } from "@/lib/constants"
 
 export function SocialMedia() {
     return (
