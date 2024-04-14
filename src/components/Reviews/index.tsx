@@ -12,7 +12,7 @@ export const Reviews = async () => {
       className="w-full relative"
     > 
       <div className="absolute top-0 left-0 bg-primary-lm h-2/5 w-full"/>
-      <div className="max-w-[1920px] mx-auto">
+      <div className="max-w-[1920px] mx-auto pt-2">
         <ReviewsMarquee reviews={reviews} />
       </div>
     </section>

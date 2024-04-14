@@ -161,6 +161,8 @@ export const PAYMENT_METHODS = [
   }
 ]
 
+export const REVIEWS_API = "https://landingatc-back-end.onrender.com/reviews"
+
 export const NAV_LINKS = [
     { name: 'Tienda', path: 'https://shop.actualizatucarro.com/' },
     { name: 'Nosotros', path: '/aboutUs' },
