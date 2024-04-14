@@ -57,23 +57,23 @@ function Footer({ }) {
                         </nav>
                     </div>
                     {/* <div className="hidden md:block h-[180px] w-[1.5px] mx-[50px] md:mx-[100px] xl:mx-[150px] bg-gradient-to-t from-[#1C2023] via-white to-background-[#1C2023]" /> */}
-                    <div className="hidden md:block h-[200px] w-[1.5px] md:mx-[100px] ms:mx-[50px] bg-gradient-to-t from-[#1C2023] via-white to-background-[#1C2023]" />
+                    <div className="hidden md:block h-full min-h-[150px] w-[1.5px] xl:mx-[100px] lg:mx-[60px] md:mx-[40px] ms:mx-[50px] bg-gradient-to-t from-[#1C2023] via-white to-background-[#1C2023]" />
                 </div>
                 {/* LINKS, CONTACT AND PAYMENT METHODS */}
                 {/* <div className="flex flex-1 flex-col items-center justify-between gap-[32px] md:gap-0 xl:pr-[50px]"> */}
                 <div className="flex flex-1 flex-col items-center justify-between gap-[50px] md:gap-0">
-                    <nav className="w-full px-[15%]">
+                    <nav className="w-full xl:px-[10%] lg:mx-[8%] px-[5%]">
                         {/* <ul className="flex flex-col xs:flex-row items-center justify-between gap-[16px] xs:gap-0 w-full"> */}
-                        <ul className="flex flex-col xs:flex-row items-stretch justify-between mt-[40px] w-full">
+                        <ul className="flex flex-col xs:flex-row items-stretch justify-between mt-[40px] mx-auto w-fit">
                             <NavLinks />
-                            <li className='flex flex-1 items-center justify-center px-[.5em]'>
+                            <li className='flex items-center justify-center px-[.5em]'>
                                 <button className="relative text-center after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2.5px] after:bg-secondary-lm after:scale-x-0 after:transform after:origin-bottom-right after:transition-transform hover:after:scale-x-100 hover:after:origin-bottom-left">
                                     Contacto
                                 </button>
                             </li>
                         </ul>
                     </nav>
-                    <div className="flex flex-wrap justify-center gap-[4px] ">
+                    <div className="flex flex-wrap justify-center gap-[4px] lg:h-[40px] md:h-[35px]">
                         {
                             paymentLogo.map((icon) => (
                                 <Image
@@ -82,7 +82,7 @@ function Footer({ }) {
                                     alt='logo'
                                     width={icon.width}
                                     height={icon.height}
-                                    className={`aspect-[${icon.width}/${icon.height}] h-[40px] w-auto`}
+                                    className={`aspect-[${icon.width}/${icon.height}] h-full w-auto`}
                                 >
 
                                 </Image>

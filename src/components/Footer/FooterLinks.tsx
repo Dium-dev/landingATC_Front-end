@@ -34,7 +34,7 @@ export function NavLinks() {
         <>
             {
                 NAV_LINKS.map((item) => (
-                    <li key={item.name} className="flex flex-1 items-center justify-center px-[.5em] border-primary-lm border-r">
+                    <li key={item.name} className="relative flex items-center justify-center px-[.8em] after:absolute after:content-[''] after:right-[-4px] after:-translate-x-1/2 after:h-[1em] after:w-[4px] after:bg-secondary-lm">
                         <Link
                             href={item.path}
                             target="_blank"
