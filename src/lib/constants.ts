@@ -162,9 +162,10 @@ export const PAYMENT_METHODS = [
 ]
 
 export const NAV_LINKS = [
+    { name: 'Tienda', path: 'https://shop.actualizatucarro.com/' },
     { name: 'Nosotros', path: '/aboutUs' },
     { name: '¿Cómo comprar?', path: '/como-comprar' },
-    { name: 'Blog', path: 'https://actualizatucarro.blogspot.com/' }
+    { name: 'Blog', path: 'https://actualizatucarro.blogspot.com/' },
 ];
 export const SOCIALMEDIA_LINKS = [
     { name: "Facebook", src: "/icons/facebook.svg", path: "" },
