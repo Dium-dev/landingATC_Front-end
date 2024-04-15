@@ -27,7 +27,7 @@ function Footer({ }) {
 
     return (
         // <footer className="flex flex-col items-center justify-center w-full px-2 md:px-[100px] pt-[32px] md:pt-[100px] pb-[20px] md:pb-[25px] bg-[#1C2023] text-white">
-        <footer className="relative flex flex-col items-center justify-center w-full px-[20px] md:px-[100px] pt-[100px] pb-[25px] bg-[#1C2023] text-white">
+        <footer className="relative flex flex-col items-center justify-center w-full px-[20px] md:px-[100px] pt-[30px] md:pt-[60px] pb-[15px] md:pb-[25px] bg-[#1C2023] text-white">
             <div className='overflow-hidden absolute top-0 left-0 w-full h-full'>
                 <Image
                     src={bgLogo}
@@ -39,11 +39,11 @@ function Footer({ }) {
                 </Image>
             </div>
             {/* <div className="flex flex-col md:flex-row justify-between items-center md:items-stretch gap-[32px] md:gap-0 w-full max-w-[1920px] mb-[32px] md:mb-[100px]"> */}
-            <div className="relative z-10 flex flex-col md:flex-row justify-between items-center md:items-stretch gap-[50px] md:gap-0 w-full max-w-[1920px] xl:mb-[60px] lg:mb-[50px] md:mb-[40px]">
+            <div className="relative z-10 flex flex-col md:flex-row justify-between items-center md:items-stretch md:gap-0 w-full max-w-[1920px] xl:mb-[60px] lg:mb-[50px] md:mb-[40px]">
                 {/* LOGO AND SOCIAL MEDIA */}
                 <div className="flex">
                     {/* <div className="flex flex-col items-center justify-between gap-[32px] xl:pl-[50px] xxxl:pl-[300px] md:gap-[16px]"> */}
-                    <div className="flex flex-col items-center justify-between gap-[24px] md:gap-[16px] xxxl:ml-[100px] pb-[25px]">
+                    <div className="flex flex-col items-center justify-between gap-[25px] md:gap-[16px] xxxl:ml-[100px] pb-[25px]">
                         <Image
                             src={logo}
                             alt="Actualiza tu carro logo."
@@ -62,12 +62,12 @@ function Footer({ }) {
                 </div>
                 {/* LINKS, CONTACT AND PAYMENT METHODS */}
                 {/* <div className="flex flex-1 flex-col items-center justify-between gap-[32px] md:gap-0 xl:pr-[50px]"> */}
-                <div className="flex flex-1 flex-col items-center justify-between gap-[50px] md:gap-0 pb-[25px]">
-                    <nav className="w-full xl:px-[10%] lg:mx-[8%] px-[5%]">
+                <div className="flex flex-1 flex-col items-center justify-between gap-[25px] md:gap-0 pb-[25px]">
+                    <nav className="w-full xl:px-[10%] lg:mx-[8%] md:px-[5%]">
                         {/* <ul className="flex flex-col xs:flex-row items-center justify-between gap-[16px] xs:gap-0 w-full"> */}
-                        <ul className="flex flex-col xs:flex-row items-stretch justify-between mt-[40px] mx-auto w-fit">
+                        <ul className="flex flex-col xs:flex-row items-stretch justify-between gap-[4px] xs:gap-0 md:mt-[40px] mx-auto w-fit">
                             <NavLinks />
-                            <li className='flex items-center justify-center px-[.5em]'>
+                            <li className='flex items-center justify-center xs:px-[.5em]'>
                                 <button className="relative text-center after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2.5px] after:bg-secondary-lm after:scale-x-0 after:transform after:origin-bottom-right after:transition-transform hover:after:scale-x-100 hover:after:origin-bottom-left">
                                     Contacto
                                 </button>
@@ -92,10 +92,11 @@ function Footer({ }) {
                     </div>
                 </div>
             </div>
-            <div className=" relative z-10 hidden md:block h-[1.5px] w-full bg-gradient-to-r from-[#1C2023] via-white to-background-[#1C2023]" />
+            <div className=" relative z-10 h-[1.5px] w-full bg-gradient-to-r from-[#1C2023] via-white to-background-[#1C2023]" />
             {/* <div className="relative z-10 w-full max-w-[1920px] h-[1.5px] md:mx-[100px] ms:mx-[50px] bg-white bg-opacity-[.1]" /> */}
             {/* <div className="w-full pt-[20px] max-w-[1920px] text-xs text-center"> */}
-            <div className="relative z-10 flex items-center justify-center gap-[1em] w-full pt-[25px] max-w-[1920px] text-xs text-center">
+            {/* Footer note */}
+            <div className="relative z-10 flex items-center justify-center gap-[1em] w-full pt-[15px] md:pt-[25px] text-[6px] ms:text-xs text-center">
                 <div>
                     <span>Made with <span style={{ textShadow: '0 0 0 white' }} className='text-transparent'>💗</span> by <Link href={""} className='underline'>Dium Developers</Link></span>
                 </div>
