@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import useMobile from '@/hooks/useMobile';
 import { SocialMedia, NavLinks } from '@/components/Footer/FooterLinks';
 // import Form
@@ -38,11 +39,11 @@ function Footer({ }) {
                 </Image>
             </div>
             {/* <div className="flex flex-col md:flex-row justify-between items-center md:items-stretch gap-[32px] md:gap-0 w-full max-w-[1920px] mb-[32px] md:mb-[100px]"> */}
-            <div className="relative z-10 flex flex-col md:flex-row justify-between items-center md:items-stretch gap-[50px] md:gap-0 w-full max-w-[1920px] mb-[50px] md:mb-[100px]">
+            <div className="relative z-10 flex flex-col md:flex-row justify-between items-center md:items-stretch gap-[50px] md:gap-0 w-full max-w-[1920px] xl:mb-[60px] lg:mb-[50px] md:mb-[40px]">
                 {/* LOGO AND SOCIAL MEDIA */}
                 <div className="flex">
                     {/* <div className="flex flex-col items-center justify-between gap-[32px] xl:pl-[50px] xxxl:pl-[300px] md:gap-[16px]"> */}
-                    <div className="flex flex-col items-center justify-between gap-[24px] md:gap-[16px] xxxl:ml-[100px]">
+                    <div className="flex flex-col items-center justify-between gap-[24px] md:gap-[16px] xxxl:ml-[100px] pb-[25px]">
                         <Image
                             src={logo}
                             alt="Actualiza tu carro logo."
@@ -57,11 +58,11 @@ function Footer({ }) {
                         </nav>
                     </div>
                     {/* <div className="hidden md:block h-[180px] w-[1.5px] mx-[50px] md:mx-[100px] xl:mx-[150px] bg-gradient-to-t from-[#1C2023] via-white to-background-[#1C2023]" /> */}
-                    <div className="hidden md:block h-full min-h-[150px] w-[1.5px] xl:mx-[100px] lg:mx-[60px] md:mx-[40px] ms:mx-[50px] bg-gradient-to-t from-[#1C2023] via-white to-background-[#1C2023]" />
+                    <div className="hidden md:block h-full min-h-[150px] w-[1.5px] xl:mx-[100px] lg:mx-[60px] md:mx-[40px] bg-gradient-to-t from-[#1C2023] via-white to-background-[#1C2023]" />
                 </div>
                 {/* LINKS, CONTACT AND PAYMENT METHODS */}
                 {/* <div className="flex flex-1 flex-col items-center justify-between gap-[32px] md:gap-0 xl:pr-[50px]"> */}
-                <div className="flex flex-1 flex-col items-center justify-between gap-[50px] md:gap-0">
+                <div className="flex flex-1 flex-col items-center justify-between gap-[50px] md:gap-0 pb-[25px]">
                     <nav className="w-full xl:px-[10%] lg:mx-[8%] px-[5%]">
                         {/* <ul className="flex flex-col xs:flex-row items-center justify-between gap-[16px] xs:gap-0 w-full"> */}
                         <ul className="flex flex-col xs:flex-row items-stretch justify-between mt-[40px] mx-auto w-fit">
@@ -91,10 +92,21 @@ function Footer({ }) {
                     </div>
                 </div>
             </div>
-            <div className="w-full max-w-[1920px] h-[1.5px] md:mx-[100px] ms:mx-[50px] bg-white bg-opacity-[.1]" />
+            <div className=" relative z-10 hidden md:block h-[1.5px] w-full bg-gradient-to-r from-[#1C2023] via-white to-background-[#1C2023]" />
+            {/* <div className="relative z-10 w-full max-w-[1920px] h-[1.5px] md:mx-[100px] ms:mx-[50px] bg-white bg-opacity-[.1]" /> */}
             {/* <div className="w-full pt-[20px] max-w-[1920px] text-xs text-center"> */}
-            <div className="w-full pt-[25px] max-w-[1920px] text-xs text-center">
-                ©Copyrigth 2024. Todos los derechos reservados - Desarrollado por: <strong>Work Team</strong>
+            <div className="relative z-10 flex items-center justify-center gap-[1em] w-full pt-[25px] max-w-[1920px] text-xs text-center">
+                <div>
+                    <span>Made with <span style={{ textShadow: '0 0 0 white' }} className='text-transparent'>💗</span> by <Link href={""} className='underline'>Dium Developers</Link></span>
+                </div>
+                <div className="aspect-square w-[.4em] h-[.4em] bg-white rounded-full" />
+                <div>
+                    <span>ActualizaTuCarro@Copyright 2024</span>
+                </div>
+                <div className="aspect-square w-[.4em] h-[.4em] bg-white rounded-full" />
+                <div>
+                    <span>Powered by: <Link href={""} className='underline'>Dium Team Work</Link></span>
+                </div>
             </div>
         </footer>
     );
