@@ -83,9 +83,8 @@ function Footer({ }) {
                                     alt='logo'
                                     width={icon.width}
                                     height={icon.height}
-                                    className={`aspect-[${icon.width}/${icon.height}] h-full w-auto`}
+                                    className={`aspect-[${icon.width}/${icon.height}] h-full w-auto max-h-[30px] ms:max-h-[40px]`}
                                 >
-
                                 </Image>
                             ))
                         }
@@ -96,16 +95,16 @@ function Footer({ }) {
             {/* <div className="relative z-10 w-full max-w-[1920px] h-[1.5px] md:mx-[100px] ms:mx-[50px] bg-white bg-opacity-[.1]" /> */}
             {/* <div className="w-full pt-[20px] max-w-[1920px] text-xs text-center"> */}
             {/* Footer note */}
-            <div className="relative z-10 flex items-center justify-center gap-[1em] w-full pt-[15px] md:pt-[25px] text-[6px] ms:text-xs text-center">
-                <div>
+            <div className="relative z-10 flex flex-col xs:flex-row items-center justify-center gap-[1em] w-full pt-[15px] md:pt-[25px] text-[8px] ms:text-xs text-center">
+                <div className='order-2 xs:order-1'>
                     <span>Made with <span style={{ textShadow: '0 0 0 white' }} className='text-transparent'>💗</span> by <Link href={""} className='underline'>Dium Developers</Link></span>
                 </div>
-                <div className="aspect-square w-[.4em] h-[.4em] bg-white rounded-full" />
-                <div>
+                <div className="hidden xs:block xs:order-2 aspect-square w-[.4em] h-[.4em] bg-white rounded-full" />
+                <div className='order-1 xs:order-3'>
                     <span>ActualizaTuCarro@Copyright 2024</span>
                 </div>
-                <div className="aspect-square w-[.4em] h-[.4em] bg-white rounded-full" />
-                <div>
+                <div className="hidden xs:block xs:order-4 aspect-square w-[.4em] h-[.4em] bg-white rounded-full" />
+                <div className='order-3 xs:order-5'>
                     <span>Powered by: <Link href={""} className='underline'>Dium Team Work</Link></span>
                 </div>
             </div>
