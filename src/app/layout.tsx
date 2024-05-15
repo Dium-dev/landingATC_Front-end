@@ -1,4 +1,5 @@
 'use client'
+import { Toaster } from "@/components/ui/sonner";
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { NavBar } from './(nav-bar)'
@@ -20,6 +21,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class">
           <NavBar />
           {children}
+          <Toaster position="bottom-right"/>
         </ThemeProvider>
       </body>
     </html>

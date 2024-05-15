@@ -5,6 +5,6 @@ export interface Brand {
 export interface Review {
   id: string;
   review: string;
-  rating: number;
+  rating: string;
   user: string;
 }

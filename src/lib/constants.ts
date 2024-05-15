@@ -159,4 +159,4 @@ export const PAYMENT_METHODS = [
     description: 'Tu seguridad es nuestra prioridad. Utilizamos tecnología SSL y métodos de pago verificados para proteger tus datos sin riesgos.'
   }
 ]
-export const REVIEWS_API = "https://landingatc-back-end.onrender.com/reviews"
+export const REVIEWS_API = "https://landingatc-back-end.onrender.com"
