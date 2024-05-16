@@ -19,8 +19,11 @@ import { createReview, updateReview } from "@/actions/reviews";
 import { Review } from "@/types";
 import { Button } from "@/components/ui/button";
 import { ImSpinner2 } from "react-icons/im";
+import { FiUploadCloud } from "react-icons/fi";
 import { toast } from "sonner";
 import { Textarea } from "@/components/ui/textarea";
+import { useDropzone } from "react-dropzone";
+import { Checkbox } from "@/components/ui/checkbox";
 
 interface ReviewFormProps {
   review?: Review;
@@ -30,6 +33,12 @@ export const ReviewForm = ({ review }: ReviewFormProps) => {
   const [isPending, startTransition] = useTransition();
   const { onClose } = useReviewFormModal();
   const router = useRouter();
+  const { getRootProps, getInputProps, isDragActive, acceptedFiles } =
+    useDropzone({
+      accept: {
+        "image/*": [],
+      },
+    });
 
   const form = useForm<z.infer<typeof reviewSchema>>({
     resolver: zodResolver(reviewSchema),
@@ -84,8 +93,8 @@ export const ReviewForm = ({ review }: ReviewFormProps) => {
     } else {
       const updatedReview = {
         id: review.id,
-        ...values
-      }
+        ...values,
+      };
 
       handleUpdate(updatedReview, token);
     }
@@ -121,7 +130,7 @@ export const ReviewForm = ({ review }: ReviewFormProps) => {
             <FormItem className="w-full">
               <FormLabel>Calificación</FormLabel>
               <FormControl>
-                <Input type="number" max={5} min={1} {...field} step={0.5}/>
+                <Input type="number" max={5} min={1} {...field} step={0.5} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -139,12 +148,52 @@ export const ReviewForm = ({ review }: ReviewFormProps) => {
             </FormItem>
           )}
         />
+        <div
+          {...getRootProps()}
+          className="w-full p-4 shadow-sm text-sm text-muted-foreground rounded-md border border-input bg-transparent flex flex-col items-center justify-center"
+        >
+          <Input type="file" required {...getInputProps()} />
+          {isDragActive ? (
+            <div className="flex flex-col gap-y-0.5 items-center">
+              <FiUploadCloud className="animate-bounce" size={50} />
+              <p>Suelta la imagen</p>
+            </div>
+          ) : (
+            <div className="flex flex-col gap-y-0.5 items-center">
+              <FiUploadCloud size={50} />
+              <p>Carga la imagen del usuario, arrastra o haz click</p>
+            </div>
+          )}
+        </div>
+        <FormField
+          control={form.control}
+          name="user"
+          render={({ field }) => (
+            <FormItem className="w-full flex items-center gap-x-2">
+              <FormControl>
+                <div className="flex items-center space-x-2">
+                  <Checkbox id="show" {...field} />
+                  <label
+                    htmlFor="show"
+                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  >
+                    Mostrar en pantalla
+                  </label>
+                </div>
+              </FormControl>
+            </FormItem>
+          )}
+        />
         <Button
           className="w-full bg-primary-lm hover:bg-red-600"
           disabled={isPending}
         >
           {!isPending ? (
-            review ? "Actualizar reseña" : "Registrar reseña"
+            review ? (
+              "Actualizar reseña"
+            ) : (
+              "Registrar reseña"
+            )
           ) : (
             <ImSpinner2 size={20} className="animate-spin h-5 w-5" />
           )}
