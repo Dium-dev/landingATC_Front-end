@@ -23,7 +23,7 @@ import { FiUploadCloud } from "react-icons/fi";
 import { toast } from "sonner";
 import { Textarea } from "@/components/ui/textarea";
 import { useDropzone } from "react-dropzone";
-import { Checkbox } from "@/components/ui/checkbox";
+import Image from "next/image";
 
 interface ReviewFormProps {
   review?: Review;
@@ -38,6 +38,10 @@ export const ReviewForm = ({ review }: ReviewFormProps) => {
       accept: {
         "image/*": [],
       },
+      multiple: false,
+      onDropRejected: () => {
+        toast.error("Archivo inválido");
+      },
     });
 
   const form = useForm<z.infer<typeof reviewSchema>>({
@@ -46,6 +50,7 @@ export const ReviewForm = ({ review }: ReviewFormProps) => {
       review: review?.review || "",
       rating: review?.rating || "5",
       user: review?.user || "",
+      active: review?.active || "false"
     },
   });
 
@@ -54,7 +59,7 @@ export const ReviewForm = ({ review }: ReviewFormProps) => {
     token: string
   ) => {
     startTransition(() => {
-      createReview(values, token)
+      createReview(values, acceptedFiles[0], token)
         .then((data) => {
           if (data.success) {
             toast.success(data.success);
@@ -93,6 +98,7 @@ export const ReviewForm = ({ review }: ReviewFormProps) => {
     } else {
       const updatedReview = {
         id: review.id,
+        image: acceptedFiles[0],
         ...values,
       };
 
@@ -152,8 +158,16 @@ export const ReviewForm = ({ review }: ReviewFormProps) => {
           {...getRootProps()}
           className="w-full p-4 shadow-sm text-sm text-muted-foreground rounded-md border border-input bg-transparent flex flex-col items-center justify-center"
         >
-          <Input type="file" required {...getInputProps()} />
-          {isDragActive ? (
+          <Input type="file" {...getInputProps()} />
+          {acceptedFiles[0] ? (
+            <Image
+              src={URL.createObjectURL(acceptedFiles[0])}
+              width={150}
+              height={150}
+              className="aspect-square object-cover"
+              alt="Imagen del usuario"
+            />
+          ) : isDragActive ? (
             <div className="flex flex-col gap-y-0.5 items-center">
               <FiUploadCloud className="animate-bounce" size={50} />
               <p>Suelta la imagen</p>
@@ -167,15 +181,20 @@ export const ReviewForm = ({ review }: ReviewFormProps) => {
         </div>
         <FormField
           control={form.control}
-          name="user"
+          name="active"
           render={({ field }) => (
-            <FormItem className="w-full flex items-center gap-x-2">
+            <FormItem className="w-full flex items-center">
               <FormControl>
-                <div className="flex items-center space-x-2">
-                  <Checkbox id="show" {...field} />
+                <div className="flex items-center gap-x-2">
+                  <Input
+                    {...field}
+                    type="checkbox"
+                    id="show"
+                    className="w-5 h-5"
+                  />
                   <label
                     htmlFor="show"
-                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    className="text-sm h-5 flex items-center font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                   >
                     Mostrar en pantalla
                   </label>

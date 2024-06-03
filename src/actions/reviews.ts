@@ -17,6 +17,7 @@ export const getReviews = async (): Promise<Review[]> => {
 };
 export const createReview = async (
   review: z.infer<typeof reviewSchema>,
+  image: File,
   token: string
 ) => {
   const newReview = {

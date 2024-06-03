@@ -7,4 +7,6 @@ export interface Review {
   review: string;
   rating: string;
   user: string;
+  image: File,
+  active?: string;
 }
