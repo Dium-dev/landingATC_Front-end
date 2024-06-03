@@ -38,7 +38,7 @@ export const AboutUsBanner = () => {
           </Link>
         </p>
       </div>
-      <div className="relative hidden md:block">
+      <div className="relative hidden md:block hover:scale-110 transition-all">
         <Image
           src={"/images/aboutUS00.webp"}
           alt="Empleados"
@@ -51,7 +51,7 @@ export const AboutUsBanner = () => {
             alt="Logo ATC"
             width={180}
             height={180}
-            className="absolute -left-20 -bottom-6 hover:scale-125 transition"
+            className="absolute -left-20 -bottom-6"
           />
         </Link>
       </div>

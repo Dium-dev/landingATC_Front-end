@@ -52,14 +52,14 @@ export function NavBar() {
         height={30}
         alt="Your Company"
         onClick={() => route.push('/')}
-        className="hidden md:block cursor-pointer"
+        className="hidden md:block cursor-pointer hover:scale-110 transition-all"
       />
 
       <ul className="ms:flex gap-3 mx-auto hidden md:left-1/2 md:absolute md:-translate-x-1/2 lg:gap-7">
         {routes.map(({ label, to, sub }) => (
           <li className="relative group" key={label}>
             <Button
-              className="flex items-center gap-2 relative"
+              className="flex items-center gap-2 relative hover:scale-125 transition-all"
               onClick={() => route.push(to)}
             >
               {' '}
@@ -87,13 +87,13 @@ export function NavBar() {
         ))}
       </ul>
 
-      <ContactIcon className="w-10 h-full hidden ml-auto ms:block mr-2" />
-      <div className="hidden ms:block">
+      <ContactIcon className="w-10 h-full hidden ml-auto ms:block mr-2 hover:scale-125 transition-all" />
+      <div className="hidden ms:block hover:scale-125 transition-all">
         <ThemeModeButton />
       </div>
       <ShoppingCartIcon
         onClick={() => route.push(routes[0].to)}
-        className="w-10 p-0.5 h-full hover:bg-primary-dm/20 rounded relative  transition-all ease-in-out"
+        className="w-10 p-0.5 h-full hover:bg-primary-dm/20 rounded relative  transition-all ease-in-out hover:scale-125"
       />
     </nav>
   )
