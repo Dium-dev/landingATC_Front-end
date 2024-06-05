@@ -10,7 +10,7 @@ export const getReviews = async (): Promise<Review[]> => {
   try {
     const response = await fetch(`${REVIEWS_API}/reviews`);
     const { data } = await response.json();
-    return data;
+    return data ?? [];
   } catch (_) {
     return [];
   }
