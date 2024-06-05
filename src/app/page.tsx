@@ -1,6 +1,7 @@
 import Banner from '@/components/Banner'
 import Categories from '@/components/Categories'
 import { AboutUsBanner } from '@/components/AboutUsBanner'
+import Footer from '@/components/Footer'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -15,10 +16,12 @@ import { PaymentMethods } from '@/components/PaymentMethods'
 import { ReviewsSkeleton } from "@/components/Reviews/ReviewsSkeleton";
 import { WhatsAppButton } from '@/components/WhatsAppButton'
 import { Suspense } from "react";
+import { NavBar } from './(nav-bar)'
 
 export default function Home() {
   return (
     <main>
+      <NavBar />
       <Banner />
       <Categories />
       <AboutUsBanner />
@@ -29,6 +32,7 @@ export default function Home() {
       </Suspense>
       <PaymentMethods />
       <WhatsAppButton />
+      <Footer />
     </main>
   )
 }
