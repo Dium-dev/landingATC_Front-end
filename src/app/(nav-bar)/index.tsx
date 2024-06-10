@@ -8,6 +8,7 @@ import { useState } from 'react'
 import { ThemeModeButton } from '@/components/theme-mode'
 import { CgChevronDown } from 'react-icons/cg'
 import { useRouter } from 'next/navigation'
+import { useSupportDialogStore } from "@/store/useSupportDialog";
 
 export type RoutesProps = Array<{
   label: string
@@ -27,6 +28,7 @@ const routes: RoutesProps = [
 
 export function NavBar() {
   const [open, setOpen] = useState(false)
+  const { onOpen } = useSupportDialogStore()
   const handleOPen = () => setOpen((cur) => !cur)
   const route = useRouter()
 
@@ -87,7 +89,7 @@ export function NavBar() {
         ))}
       </ul>
 
-      <ContactIcon className="w-10 h-full hidden ml-auto ms:block mr-2" />
+      <ContactIcon className="w-10 h-full hidden ml-auto ms:block mr-2" onClick={onOpen} />
       <div className="hidden ms:block">
         <ThemeModeButton />
       </div>

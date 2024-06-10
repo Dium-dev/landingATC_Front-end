@@ -2,6 +2,7 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from 'next-themes'
+import { DialogProvider } from '@/components/SupportDialog/DialogProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,6 +18,7 @@ export default function RootLayout({
         style={{ maxWidth: '1920px', margin: '0 auto' }}
       >
         <ThemeProvider attribute="class">
+          <DialogProvider />
           {children}
         </ThemeProvider>
       </body>

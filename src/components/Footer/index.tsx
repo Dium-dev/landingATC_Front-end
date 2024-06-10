@@ -3,10 +3,12 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import useMobile from '@/hooks/useMobile';
+import { useSupportDialogStore } from "@/store/useSupportDialog";
 import { SocialMedia, NavLinks } from '@/components/Footer/FooterLinks';
 // import Form
 
 function Footer({ }) {
+    const { onOpen } = useSupportDialogStore();
 
     const { isMobile } = useMobile();
     const logo = `/images/footer/logoFooter${isMobile ? "M" : "D"}.webp`;
@@ -67,7 +69,7 @@ function Footer({ }) {
                         {/* <ul className="flex flex-col xs:flex-row items-center justify-between gap-[16px] xs:gap-0 w-full"> */}
                         <ul className="flex flex-col xs:flex-row items-stretch justify-between gap-[4px] xs:gap-0 md:mt-[40px] mx-auto w-fit">
                             <NavLinks />
-                            <li className='flex items-center justify-center xs:px-[.5em]'>
+                            <li className='flex items-center justify-center xs:px-[.5em]' onClick={onOpen}>
                                 <button className="relative text-center after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2.5px] after:bg-secondary-lm after:scale-x-0 after:transform after:origin-bottom-right after:transition-transform hover:after:scale-x-100 hover:after:origin-bottom-left">
                                     Contacto
                                 </button>
