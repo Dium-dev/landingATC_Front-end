@@ -23,9 +23,9 @@ import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 
 const formSchema = z.object({
-  name: z.string().min(2),
-  email: z.string().email(),
-  message: z.string().min(10),
+  name: z.string().min(2, { message: 'El nombre no es válido' }),
+  email: z.string().email({ message: 'El correo no es válido' }),
+  message: z.string().min(30, { message: 'El mensaje es muy corto' }),
 });
 
 export const SupportDialog = () => {
@@ -59,7 +59,7 @@ export const SupportDialog = () => {
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input className="bg-rose-100 border-none" placeholder="Nombre" {...field} />
+                    <Input className="bg-rose-100 dark:bg-secondary-dm border-none" placeholder="Nombre" {...field} />
                   </FormControl>
 
                   <FormMessage />
@@ -72,7 +72,7 @@ export const SupportDialog = () => {
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input className="bg-rose-100 border-none" placeholder="Correo" {...field} />
+                    <Input className="bg-rose-100 dark:bg-secondary-dm border-none" placeholder="Correo" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -84,13 +84,13 @@ export const SupportDialog = () => {
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Textarea className="min-h-[150px] max-h-[270px] bg-rose-100 border-none" placeholder="Mensaje" {...field} />
+                    <Textarea className="min-h-[150px] max-h-[270px] bg-rose-100 dark:bg-secondary-dm border-none" placeholder="Mensaje" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <Button className="w-full bg-primary-lm py-6 text-base">ENVIAR</Button>
+            <Button className="w-full bg-primary-lm py-6 text-base dark:text-white dark:hover:bg-secondary-dm">ENVIAR</Button>
           </form>
         </Form>
       </DialogContent>
