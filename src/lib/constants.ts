@@ -142,6 +142,7 @@ export const BRANDS = [
     image: "/images/brands/volvo-logo.webp"
   },
 ]
+
 export const PAYMENT_METHODS = [
   {
     img: '/icons/contact.svg',
@@ -159,7 +160,7 @@ export const PAYMENT_METHODS = [
     description: 'Tu seguridad es nuestra prioridad. Utilizamos tecnología SSL y métodos de pago verificados para proteger tus datos sin riesgos.'
   }
 ]
-export const REVIEWS_API = "https://landingatc-back-end.onrender.com/reviews"
+
 export const PURCHASE_PROCESS = [
   {
     title: "SELECT ITEM",
@@ -191,4 +192,19 @@ export const PURCHASE_PROCESS = [
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, harum sed. Aliquam sed ipsa autem fugit obcaecati, libero consequatur molestias eveniet alias odio. Quam mollitia molestias quod, asperiores deleniti expedita?",
     background: ''
   },
+  
+export const REVIEWS_API = "https://landingatc-back-end.onrender.com/reviews"
+
+export const NAV_LINKS = [
+    { name: 'Tienda', path: 'https://shop.actualizatucarro.com/' },
+    { name: 'Nosotros', path: '/aboutUs' },
+    { name: '¿Cómo comprar?', path: '/como-comprar' },
+    { name: 'Blog', path: 'https://actualizatucarro.blogspot.com/' },
+];
+export const SOCIALMEDIA_LINKS = [
+    { name: "Facebook", src: "/icons/facebook.svg", path: "" },
+    { name: "Twitter", src: "/icons/x.svg", path: "" },
+    { name: "Youtube", src: "/icons/youtube.svg", path: "" },
+    { name: "Pinterest", src: "/icons/pinterest.svg", path: "" },
+    { name: "Instagram", src: "/icons/instagram.svg", path: "" }
 ]
