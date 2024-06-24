@@ -176,3 +176,35 @@ export const SOCIALMEDIA_LINKS = [
     { name: "Pinterest", src: "/icons/pinterest.svg", path: "" },
     { name: "Instagram", src: "/icons/instagram.svg", path: "" }
 ]
+export const PURCHASE_PROCESS = [
+  {
+    title: "SELECT ITEM",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, harum sed. Aliquam sed ipsa autem fugit obcaecati, libero consequatur molestias eveniet alias odio. Quam mollitia molestias quod, asperiores deleniti expedita?",
+    background: ''
+  },
+  {
+    title: "ADD TO CART",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, harum sed. Aliquam sed ipsa autem fugit obcaecati, libero consequatur molestias eveniet alias odio. Quam mollitia molestias quod, asperiores deleniti expedita?",
+    background: ''
+  },
+  {
+    title: "PAYMENT",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, harum sed. Aliquam sed ipsa autem fugit obcaecati, libero consequatur molestias eveniet alias odio. Quam mollitia molestias quod, asperiores deleniti expedita?",
+    background: ''
+  },
+  {
+    title: "PACKING",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, harum sed. Aliquam sed ipsa autem fugit obcaecati, libero consequatur molestias eveniet alias odio. Quam mollitia molestias quod, asperiores deleniti expedita?",
+    background: ''
+  },
+  {
+    title: "DELIVERY",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, harum sed. Aliquam sed ipsa autem fugit obcaecati, libero consequatur molestias eveniet alias odio. Quam mollitia molestias quod, asperiores deleniti expedita?",
+    background: ''
+  },
+  {
+    title: "ITEM RECEIVED",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, harum sed. Aliquam sed ipsa autem fugit obcaecati, libero consequatur molestias eveniet alias odio. Quam mollitia molestias quod, asperiores deleniti expedita?",
+    background: ''
+  },
+];
