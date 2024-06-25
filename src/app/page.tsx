@@ -27,9 +27,9 @@ export default function Home() {
       <AboutUsBanner />
       <BrandsCarousel />
       <Blog />
-      <Suspense fallback={<ReviewsSkeleton />}>
+      {/* <Suspense fallback={<ReviewsSkeleton />}>
         <Reviews />
-      </Suspense>
+      </Suspense> */}
       <PaymentMethods />
       <WhatsAppButton />
       <Footer />
