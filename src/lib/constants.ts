@@ -178,33 +178,33 @@ export const SOCIALMEDIA_LINKS = [
 ]
 export const PURCHASE_PROCESS = [
   {
-    title: "SELECT ITEM",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, harum sed. Aliquam sed ipsa autem fugit obcaecati, libero consequatur molestias eveniet alias odio. Quam mollitia molestias quod, asperiores deleniti expedita?",
+    title: "SELECCIONAR ARTÍCULO",
+    description: "Explora nuestro catálogo en línea para encontrar el repuesto o accesorio que necesitas para tu vehículo. Puedes utilizar los filtros de búsqueda que te ayudarán a encontrar exactamente lo que buscas. Una vez que encuentres el artículo adecuado, asegúrate de revisar las especificaciones y compatibilidad con tu carro.",
     background: ''
   },
   {
-    title: "ADD TO CART",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, harum sed. Aliquam sed ipsa autem fugit obcaecati, libero consequatur molestias eveniet alias odio. Quam mollitia molestias quod, asperiores deleniti expedita?",
+    title: "AGREGAR AL CARRITO",
+    description: 'Una vez que hayas seleccionado el artículo, agrégalo a tu carrito de compras haciendo clic en el botón "Agregar al carrito". Puedes continuar navegando y añadiendo más artículos si lo deseas. Cuando estés listo para proceder con la compra, ve a tu carrito para revisar los artículos seleccionados y asegurarte de que todo esté correcto.',
     background: ''
   },
   {
-    title: "PAYMENT",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, harum sed. Aliquam sed ipsa autem fugit obcaecati, libero consequatur molestias eveniet alias odio. Quam mollitia molestias quod, asperiores deleniti expedita?",
+    title: "PAGO",
+    description: "Cuando estés listo para finalizar tu compra, procede al pago. Ofrecemos múltiples métodos de pago para tu conveniencia, incluyendo tarjetas de crédito, débito, transferencias bancarias y otros métodos electrónicos. Introduce tus datos de pago de manera segura y verifica que la información sea correcta antes de confirmar la transacción.",
     background: ''
   },
   {
-    title: "PACKING",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, harum sed. Aliquam sed ipsa autem fugit obcaecati, libero consequatur molestias eveniet alias odio. Quam mollitia molestias quod, asperiores deleniti expedita?",
+    title: "EMPAQUE",
+    description: "Después de confirmar tu pedido, nuestro equipo comenzará a preparar tu paquete. Nos aseguramos de que todos los artículos sean cuidadosamente empaquetados para prevenir daños durante el transporte. Utilizamos materiales de embalaje de alta calidad para proteger tu compra y garantizar que llegue en perfectas condiciones.",
     background: ''
   },
   {
-    title: "DELIVERY",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, harum sed. Aliquam sed ipsa autem fugit obcaecati, libero consequatur molestias eveniet alias odio. Quam mollitia molestias quod, asperiores deleniti expedita?",
+    title: "ENVÍO",
+    description: "Una vez que tu pedido esté empaquetado, lo enviaremos a la dirección que nos proporcionaste. Trabajamos con servicios de mensajería confiables para asegurar una entrega rápida y segura. Te enviaremos un número de seguimiento para que puedas monitorear el estado de tu envío en tiempo real.",
     background: ''
   },
   {
-    title: "ITEM RECEIVED",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, harum sed. Aliquam sed ipsa autem fugit obcaecati, libero consequatur molestias eveniet alias odio. Quam mollitia molestias quod, asperiores deleniti expedita?",
+    title: "ARTÍCULO RECIBIDO",
+    description: "Cuando recibas tu pedido, asegúrate de revisar todos los artículos para confirmar que están en buen estado y que coinciden con tu compra. Si tienes alguna duda o problema con tu pedido, no dudes en contactarnos para recibir asistencia. Estamos aquí para asegurarnos de que tengas una experiencia de compra satisfactoria.",
     background: ''
   },
 ];
