@@ -11,10 +11,10 @@ const ComoComprarPage = () => {
         <HowToBuyItem
           description={item.description}
           title={item.title}
-          icon="/icons/contact.svg"
           background={item.background}
           key={index}
           direction={index % 2 === 0 ? 'right' : 'left'}
+          icon={item.icon}
         />
       ))}
     </ReactPageScroller>

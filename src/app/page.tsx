@@ -21,7 +21,7 @@ import { NavBar } from './(nav-bar)'
 export default function Home() {
   return (
     <main>
-      <NavBar />
+      
       <Banner />
       <Categories />
       <AboutUsBanner />
