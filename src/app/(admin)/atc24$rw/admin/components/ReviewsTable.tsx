@@ -8,6 +8,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import Image from "next/image";
 import { Review } from "@/types";
 import { CiEdit, CiTrash } from "react-icons/ci";
 import { useReviewFormModal } from "@/store/useReviewFormModal";
@@ -16,6 +17,7 @@ import { DeleteAlert } from "./DeleteAlert";
 import { toast } from "sonner";
 import { useTransition } from "react";
 import { useRouter } from "next/navigation";
+import { REVIEWS_API } from "@/lib/constants";
 
 interface ReviewsTableProps {
   reviews: Review[];
@@ -40,7 +42,7 @@ export const ReviewsTable = ({ reviews }: ReviewsTableProps) => {
           }
           if (data.error) {
             toast.error(data.error);
-            router.push("/atc24$rw");
+            // router.push("/atc24$rw");
           }
         })
         .catch(() => toast.error("Ocurrió un error al eliminar la reseña"));
@@ -52,7 +54,7 @@ export const ReviewsTable = ({ reviews }: ReviewsTableProps) => {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Id</TableHead>
+            <TableHead>Imagen del usuario</TableHead>
             <TableHead>Texto</TableHead>
             <TableHead>Calificación</TableHead>
             <TableHead>Usuario</TableHead>
@@ -65,8 +67,10 @@ export const ReviewsTable = ({ reviews }: ReviewsTableProps) => {
         <TableBody>
           {reviews.map((review) => (
             <TableRow key={review.id}>
-              <TableCell>{review.id}</TableCell>
-              <TableCell>{review.review}</TableCell>
+              <TableCell>
+                <Image src={`${REVIEWS_API}/images/reviews/${review.image}`} className="rounded-full aspect-square object-cover" width={100} height={100} alt="Imagen del usuario" />
+              </TableCell>
+              <TableCell className="max-w-[15rem] pr-6">{review.review}</TableCell>
               <TableCell>{review.rating}</TableCell>
               <TableCell>{review.user}</TableCell>
               <TableCell>
@@ -76,9 +80,9 @@ export const ReviewsTable = ({ reviews }: ReviewsTableProps) => {
                   className="cursor-pointer"
                 />
               </TableCell>
-              <TableCell className="flex items-center justify-end">
+              <TableCell>
                 <DeleteAlert onDelete={() => handleDelele(review.id)}>
-                  <CiTrash size={25} className="cursor-pointer" />
+                  <CiTrash size={25} className="cursor-pointer hover:text-red-500" />
                 </DeleteAlert>
               </TableCell>
             </TableRow>

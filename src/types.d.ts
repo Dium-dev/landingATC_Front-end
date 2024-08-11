@@ -7,6 +7,6 @@ export interface Review {
   review: string;
   rating: string;
   user: string;
-  image: File,
+  image: File | string,
   active?: string;
 }

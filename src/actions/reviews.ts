@@ -10,42 +10,41 @@ export const getReviews = async (): Promise<Review[]> => {
   try {
     const response = await fetch(`${REVIEWS_API}/reviews`);
     const { data } = await response.json();
-    return data;
+    return data ?? [];
   } catch (_) {
     return [];
   }
 };
-export const createReview = async (
-  review: z.infer<typeof reviewSchema>,
-  image: File,
-  token: string
-) => {
-  const newReview = {
-    review: review.review,
-    rating: String(review.rating),
-    user: review.user,
-    date: new Date(),
-  };
-
-  const response = await fetch(`${REVIEWS_API}/reviews`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-    body: JSON.stringify(newReview),
-  });
-  if (!response.ok) {
+export const createReview = async (formData: FormData, token: string) => {
+  try {
+    const response = await fetch(`${REVIEWS_API}/reviews`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      body: formData,
+    });
+    const data = await response.json();
+    if (!response.ok && response.status == 401) {
+      return {
+        error: "Su sesión ha expirado, ingrese nuevamente",
+      };
+    }
+    if (!response.ok) {
+      return {
+        error: data.message,
+      };
+    }
+    revalidatePath("atc24$rw/admin");
+    revalidatePath("/");
     return {
-      error: "Su sesión ha expirado, ingrese nuevamente",
+      success: "Se creó una nueva reseña",
+    };
+  } catch (error) {
+    return {
+      error: "Error al crear la reseña",
     };
   }
-
-  revalidatePath("atc24$rw/admin");
-  revalidatePath("/");
-  return {
-    success: "Se creó una nueva reseña",
-  };
 };
 export const deleteReview = async (id: string, token: string) => {
   const response = await fetch(`${REVIEWS_API}/reviews/${id}`, {
@@ -54,9 +53,15 @@ export const deleteReview = async (id: string, token: string) => {
       Authorization: `Bearer ${token}`,
     },
   });
-  if (!response.ok) {
+  const data = await response.json();
+  if (!response.ok && response.status == 401) {
     return {
       error: "Su sesión ha expirado, ingrese nuevamente",
+    };
+  }
+  if (!response.ok) {
+    return {
+      error: data.message,
     };
   }
   revalidatePath("atc24$rw/admin");
@@ -65,18 +70,23 @@ export const deleteReview = async (id: string, token: string) => {
     success: "Se eliminó la reseña",
   };
 };
-export const updateReview = async (updatedReview: Review, token: string) => {
+export const updateReview = async (formData: FormData, token: string) => {
   const response = await fetch(`${REVIEWS_API}/reviews`, {
     method: "PATCH",
     headers: {
       Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
     },
-    body: JSON.stringify(updatedReview),
+    body: formData,
   });
-  if (!response.ok) {
+  const data = await response.json();
+  if (!response.ok && response.status == 401) {
     return {
       error: "Su sesión ha expirado, ingrese nuevamente",
+    };
+  }
+  if (!response.ok) {
+    return {
+      error: data.message,
     };
   }
 

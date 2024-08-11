@@ -24,6 +24,7 @@ import { toast } from "sonner";
 import { Textarea } from "@/components/ui/textarea";
 import { useDropzone } from "react-dropzone";
 import Image from "next/image";
+import { REVIEWS_API } from "@/lib/constants";
 
 interface ReviewFormProps {
   review?: Review;
@@ -50,7 +51,7 @@ export const ReviewForm = ({ review }: ReviewFormProps) => {
       review: review?.review || "",
       rating: review?.rating || "5",
       user: review?.user || "",
-      active: review?.active || "false"
+      active: review?.active || "false",
     },
   });
 
@@ -58,8 +59,16 @@ export const ReviewForm = ({ review }: ReviewFormProps) => {
     values: z.infer<typeof reviewSchema>,
     token: string
   ) => {
+    const formData = new FormData();
+    formData.append("review", values.review);
+    formData.append("rating", String(values.rating));
+    formData.append("user", values.user);
+    formData.append("date", new Date().toISOString());
+    formData.append("file", acceptedFiles[0]);
+    formData.append("active", JSON.parse(values.active || "false") ? "true" : "false");
+    
     startTransition(() => {
-      createReview(values, acceptedFiles[0], token)
+      createReview(formData, token)
         .then((data) => {
           if (data.success) {
             toast.success(data.success);
@@ -67,7 +76,7 @@ export const ReviewForm = ({ review }: ReviewFormProps) => {
           }
           if (data.error) {
             toast.error(data.error);
-            router.push("/atc24$rw");
+            // router.push("/atc24$rw");
           }
         })
         .catch(() => toast.error("Ocurrió un error"));
@@ -75,8 +84,18 @@ export const ReviewForm = ({ review }: ReviewFormProps) => {
   };
 
   const handleUpdate = (review: Review, token: string) => {
+    const formData = new FormData();
+    formData.append("id", review.id);
+    formData.append("review", review.review);
+    formData.append("rating", String(review.rating));
+    formData.append("user", review.user);
+    formData.append("date", new Date().toISOString());
+    formData.append("file", acceptedFiles[0] || new File([], "null", {
+      type: "image/png",
+    }));
+    formData.append("active", review.active ? "true" : "false");
     startTransition(() => {
-      updateReview(review, token)
+      updateReview(formData, token)
         .then((data) => {
           if (data.success) {
             toast.success(data.success);
@@ -84,7 +103,7 @@ export const ReviewForm = ({ review }: ReviewFormProps) => {
           }
           if (data.error) {
             toast.error(data.error);
-            router.push("/atc24$rw");
+            // router.push("/atc24$rw");
           }
         })
         .catch(() => toast.error("Ocurrió un error"));
@@ -159,7 +178,15 @@ export const ReviewForm = ({ review }: ReviewFormProps) => {
           className="w-full p-4 shadow-sm text-sm text-muted-foreground rounded-md border border-input bg-transparent flex flex-col items-center justify-center"
         >
           <Input type="file" {...getInputProps()} />
-          {acceptedFiles[0] ? (
+          {review?.image && !acceptedFiles[0] ? (
+            <Image
+              src={`${REVIEWS_API}/images/reviews/${review.image}`}
+              width={150}
+              height={150}
+              className="aspect-square object-cover"
+              alt="Imagen del usuario"
+            />
+          ) : acceptedFiles[0] ? (
             <Image
               src={URL.createObjectURL(acceptedFiles[0])}
               width={150}
@@ -191,6 +218,7 @@ export const ReviewForm = ({ review }: ReviewFormProps) => {
                     type="checkbox"
                     id="show"
                     className="w-5 h-5"
+                    checked={JSON.parse(field.value || 'false') ? true : false}
                   />
                   <label
                     htmlFor="show"
@@ -204,7 +232,7 @@ export const ReviewForm = ({ review }: ReviewFormProps) => {
           )}
         />
         <Button
-          className="w-full bg-primary-lm hover:bg-red-600"
+          className="w-full bg-primary-lm hover:bg-red-600 dark:text-white"
           disabled={isPending}
         >
           {!isPending ? (

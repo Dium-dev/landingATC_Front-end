@@ -3,22 +3,28 @@
 import { REVIEWS_API } from "@/lib/constants";
 
 export const login = async (email: string, password: string) => {
-  const response = await fetch(`${REVIEWS_API}/admin-users/logIn`, {
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ thisUser: email, pass: password }),
-    method: "POST",
-  });
-
-  const data = await response.json();
+  try {
+    const response = await fetch(`${REVIEWS_API}/admin-users/logIn`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ thisUser: email, pass: password }),
+      method: "POST",
+    });
   
-  if (data.statusCode === 401) {
+    const data = await response.json();
+    
+    if (data.statusCode === 401) {
+      return {
+        error: "Acceso no autorizado",
+      };
+    }
     return {
-      error: "Acceso no autorizado",
+      token: data.access_token,
     };
+  } catch (error) {
+    return {
+      error: "Error al intentar iniciar sesión, intente más tarde",
+    }
   }
-  return {
-    token: data.access_token,
-  };
 };
