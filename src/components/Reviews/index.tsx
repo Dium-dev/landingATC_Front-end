@@ -3,8 +3,7 @@ import { ReviewsMarquee } from "./ReviewsMarquee";
 import { getReviews } from "@/actions/reviews";
 
 export const Reviews = async () => {
-  const reviews: Review[] = await getReviews();
-
+  const reviews: Review[] = (await getReviews()).filter((review) => review.active);
   if(!reviews.length) return null
 
   return (

@@ -25,6 +25,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useDropzone } from "react-dropzone";
 import Image from "next/image";
 import { REVIEWS_API } from "@/lib/constants";
+import { createFormData } from "@/lib/utils";
 
 interface ReviewFormProps {
   review?: Review;
@@ -52,6 +53,7 @@ export const ReviewForm = ({ review }: ReviewFormProps) => {
       rating: review?.rating || "5",
       user: review?.user || "",
       active: review?.active || "false",
+      date: review?.date || new Date().toISOString(),
     },
   });
 
@@ -59,14 +61,10 @@ export const ReviewForm = ({ review }: ReviewFormProps) => {
     values: z.infer<typeof reviewSchema>,
     token: string
   ) => {
-    const formData = new FormData();
-    formData.append("review", values.review);
-    formData.append("rating", String(values.rating));
-    formData.append("user", values.user);
-    formData.append("date", new Date().toISOString());
-    formData.append("file", acceptedFiles[0]);
-    formData.append("active", JSON.parse(values.active || "false") ? "true" : "false");
-    
+    const formData: FormData = createFormData({
+      ...values,
+      file: acceptedFiles[0],
+    });
     startTransition(() => {
       createReview(formData, token)
         .then((data) => {
@@ -84,16 +82,12 @@ export const ReviewForm = ({ review }: ReviewFormProps) => {
   };
 
   const handleUpdate = (review: Review, token: string) => {
-    const formData = new FormData();
-    formData.append("id", review.id);
-    formData.append("review", review.review);
-    formData.append("rating", String(review.rating));
-    formData.append("user", review.user);
-    formData.append("date", new Date().toISOString());
-    formData.append("file", acceptedFiles[0] || new File([], "null", {
-      type: "image/png",
-    }));
-    formData.append("active", review.active ? "true" : "false");
+    const formData: FormData = createFormData({
+      ...review,
+      file: acceptedFiles[0] || new File([], "null", {
+        type: "image/png",
+      })
+    });
     startTransition(() => {
       updateReview(formData, token)
         .then((data) => {
@@ -142,6 +136,7 @@ export const ReviewForm = ({ review }: ReviewFormProps) => {
                   {...field}
                   placeholder="Texto de la reseña"
                   className="max-w-full h-[150px] resize-none"
+                  maxLength={600}
                 />
               </FormControl>
               <FormMessage />
@@ -218,7 +213,7 @@ export const ReviewForm = ({ review }: ReviewFormProps) => {
                     type="checkbox"
                     id="show"
                     className="w-5 h-5"
-                    checked={JSON.parse(field.value || 'false') ? true : false}
+                    checked={JSON.parse(field.value)}
                   />
                   <label
                     htmlFor="show"
@@ -227,6 +222,17 @@ export const ReviewForm = ({ review }: ReviewFormProps) => {
                     Mostrar en pantalla
                   </label>
                 </div>
+              </FormControl>
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="date"
+          render={({ field }) => (
+            <FormItem className="hidden">
+              <FormControl>
+                <Input type="hidden" {...field} />
               </FormControl>
             </FormItem>
           )}

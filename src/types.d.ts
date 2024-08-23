@@ -8,5 +8,6 @@ export interface Review {
   rating: string;
   user: string;
   image: File | string,
-  active?: string;
+  date: string;
+  active: string;
 }

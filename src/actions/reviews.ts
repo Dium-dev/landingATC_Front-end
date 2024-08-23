@@ -8,7 +8,9 @@ import { Review } from "@/types";
 
 export const getReviews = async (): Promise<Review[]> => {
   try {
-    const response = await fetch(`${REVIEWS_API}/reviews`);
+    const response = await fetch(`${REVIEWS_API}/reviews`, {
+      cache: "no-store"
+    });
     const { data } = await response.json();
     return data ?? [];
   } catch (_) {
