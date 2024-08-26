@@ -61,6 +61,10 @@ export const ReviewForm = ({ review }: ReviewFormProps) => {
     values: z.infer<typeof reviewSchema>,
     token: string
   ) => {
+    if(!acceptedFiles[0]){
+      return toast.error("Debes seleccionar una imagen");
+    };
+    
     const formData: FormData = createFormData({
       ...values,
       file: acceptedFiles[0],
