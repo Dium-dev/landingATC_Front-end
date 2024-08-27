@@ -20,6 +20,7 @@ import { FormEvent, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { REVIEWS_API } from "@/lib/constants";
 import { cn, createFormData } from "@/lib/utils";
+import useMobile from "@/hooks/useMobile";
 
 interface ReviewsTableProps {
   reviews: Review[];
@@ -28,6 +29,7 @@ interface ReviewsTableProps {
 export const ReviewsTable = ({ reviews }: ReviewsTableProps) => {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
+  const { isMobile } = useMobile();
   const { onOpen } = useReviewFormModal();
 
   const handleDelele = (id: string) => {
@@ -69,7 +71,7 @@ export const ReviewsTable = ({ reviews }: ReviewsTableProps) => {
       updateReview(formData, token)
         .then((data) => {
           if (data.success) {
-            toast.success(data.success);
+            toast.success(`Reseña ${value ? "activada" : "desactivada"} exitosamente`);
           }
           if (data.error) {
             toast.error(data.error);
@@ -84,12 +86,12 @@ export const ReviewsTable = ({ reviews }: ReviewsTableProps) => {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Usuario</TableHead>
+            <TableHead className="text-center md:text-left md:w-72">Usuario</TableHead>
             <TableHead>Texto</TableHead>
-            <TableHead>Calificación</TableHead>
-            <TableHead>Visibilidad</TableHead>
-            <TableHead>Editar</TableHead>
-            <TableHead className="flex items-center justify-end">
+            <TableHead className="md:w-36 text-center">{isMobile ? "⭐️" : "Calificación"}</TableHead>
+            <TableHead className="md:w-36 text-center">Estado</TableHead>
+            <TableHead className="md:w-36 text-center">Editar</TableHead>
+            <TableHead className="md:w-36 text-center">
               Eliminar
             </TableHead>
           </TableRow>
@@ -100,22 +102,22 @@ export const ReviewsTable = ({ reviews }: ReviewsTableProps) => {
               JSON.parse(review.active) == false ? "opacity-50" : ""
             )}>
               <TableCell>
-                <div className="flex items-center gap-x-3">
+                <div className="flex flex-col md:flex-row items-center gap-x-3">
                   <Image
                     src={`${REVIEWS_API}/images/reviews/${review.image}`}
                     className="rounded-full aspect-square object-cover"
-                    width={70}
-                    height={70}
+                    width={isMobile ? 40 : 70}
+                    height={isMobile ? 40 : 70}
                     alt="Imagen del usuario"
                   />
-                  <span className="font-bold">{review.user}</span>
+                  <span className="font-bold text-center">{review.user}</span>
                 </div>
               </TableCell>
-              <TableCell className="max-w-[15rem] pr-6">
+              <TableCell className="max-w-[5rem] md:max-w-[15rem] truncate">
                 {review.review}
               </TableCell>
-              <TableCell>{review.rating}</TableCell>
-              <TableCell>
+              <TableCell className="text-center">{review.rating}</TableCell>
+              <TableCell className="text-center">
                 <Switch
                   defaultChecked={
                     JSON.parse(review.active || "false") ? true : false
@@ -127,18 +129,18 @@ export const ReviewsTable = ({ reviews }: ReviewsTableProps) => {
                   disabled={isPending}
                 />
               </TableCell>
-              <TableCell>
+              <TableCell className="text-center">
                 <CiEdit
                   size={25}
                   onClick={() => onOpen(review)}
-                  className="cursor-pointer"
+                  className="cursor-pointer mx-auto"
                 />
               </TableCell>
-              <TableCell>
+              <TableCell className="text-center">
                 <DeleteAlert onDelete={() => handleDelele(review.id)}>
                   <CiTrash
                     size={25}
-                    className="cursor-pointer hover:text-red-500"
+                    className="cursor-pointer hover:scale-125 text-red-600 mx-auto transition-all"
                   />
                 </DeleteAlert>
               </TableCell>
@@ -146,7 +148,7 @@ export const ReviewsTable = ({ reviews }: ReviewsTableProps) => {
           ))}
         </TableBody>
       </Table>
-      <Button onClick={() => onOpen()} className="my-6">
+      <Button onClick={() => onOpen()} className="my-5">
         Crear reseña
       </Button>
     </>

@@ -14,7 +14,7 @@ export const login = async (email: string, password: string) => {
   
     const data = await response.json();
     
-    if (data.statusCode === 401) {
+    if (!response.ok) {
       return {
         error: "Acceso no autorizado",
       };

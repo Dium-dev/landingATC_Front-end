@@ -165,7 +165,7 @@ export const ReviewForm = ({ review }: ReviewFormProps) => {
           name="user"
           render={({ field }) => (
             <FormItem className="w-full">
-              <FormLabel>Nombre del usuario</FormLabel>
+              <FormLabel>Usuario</FormLabel>
               <FormControl>
                 <Input placeholder="Nombre del usuario" {...field} />
               </FormControl>
@@ -201,7 +201,7 @@ export const ReviewForm = ({ review }: ReviewFormProps) => {
           ) : (
             <div className="flex flex-col gap-y-0.5 items-center">
               <FiUploadCloud size={50} />
-              <p>Carga la imagen del usuario, arrastra o haz click</p>
+              <p className="text-center">Carga la imagen del usuario, arrastra o haz click</p>
             </div>
           )}
         </div>

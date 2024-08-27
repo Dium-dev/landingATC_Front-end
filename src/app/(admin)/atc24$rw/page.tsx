@@ -81,7 +81,7 @@ const LoginPage = () => {
               </FormItem>
             )}
           />
-          <Button className="w-full bg-primary-lm hover:bg-red-600" disabled={isPending}>
+          <Button className="w-full bg-primary-lm hover:bg-red-600 dark:text-white" disabled={isPending}>
             {!isPending ? (
               "Ingresar"
             ) : (

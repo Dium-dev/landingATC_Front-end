@@ -5,7 +5,7 @@ const AdminPage = async () => {
   const reviews = await getReviews();
 
   return (
-    <main className="w-full p-8">
+    <main className="w-full md:p-8 flex flex-col items-center">
       <ReviewsTable reviews={reviews} />
     </main>
   );
