@@ -10,6 +10,9 @@ const config = {
   ],
   prefix: "",
   theme: {
+    fontFamily: {
+      "rounded": ["Arial Rounded MT Bold"]
+    },
     container: {
       center: true,
       padding: "2rem",

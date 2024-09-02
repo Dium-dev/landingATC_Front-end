@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { ModalProvider } from "./components/ModalProvider";
+import { NavBar } from "./components/NavBar";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
@@ -19,6 +20,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
 
   return (
     <>
+      <NavBar />
       {children}
       <ModalProvider />
     </>
