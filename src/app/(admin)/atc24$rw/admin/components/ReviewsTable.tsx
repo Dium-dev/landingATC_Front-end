@@ -86,13 +86,13 @@ export const ReviewsTable = ({ reviews }: ReviewsTableProps) => {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead className="text-center md:text-left md:w-72">Usuario</TableHead>
-            <TableHead>Texto</TableHead>
-            <TableHead className="md:w-36 text-center">{isMobile ? "⭐️" : "Calificación"}</TableHead>
-            <TableHead className="md:w-36 text-center">Estado</TableHead>
-            <TableHead className="md:w-36 text-center">Editar</TableHead>
+            <TableHead className="text-center md:text-left md:w-72">USUARIO</TableHead>
+            <TableHead>TEXTO</TableHead>
+            <TableHead className="md:w-36 text-center">{isMobile ? "⭐️" : "CALIFICACIÓN"}</TableHead>
+            <TableHead className="md:w-36 text-center">ESTADO</TableHead>
+            <TableHead className="md:w-36 text-center">EDITAR</TableHead>
             <TableHead className="md:w-36 text-center">
-              Eliminar
+              ELIMINAR
             </TableHead>
           </TableRow>
         </TableHeader>
@@ -149,7 +149,7 @@ export const ReviewsTable = ({ reviews }: ReviewsTableProps) => {
         </TableBody>
       </Table>
       <Button onClick={() => onOpen()} className="my-5">
-        Crear reseña
+        Crear nueva reseña
       </Button>
     </>
   );
