@@ -25,6 +25,9 @@ export const useReviewFormModal = create<ReviewFormModal>((set) => ({
     id: '',
     review: '',
     rating: '5',
-    user: ''
+    user: '',
+    image: '',
+    date: '',
+    active: 'false'
   }
 }));
