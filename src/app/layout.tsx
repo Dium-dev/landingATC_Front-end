@@ -1,4 +1,5 @@
 'use client'
+import { Toaster } from "@/components/ui/sonner";
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from 'next-themes'
@@ -18,8 +19,8 @@ export default function RootLayout({
         style={{ maxWidth: '1920px', margin: '0 auto' }}
       >
         <ThemeProvider attribute="class">
-          <DialogProvider />
           {children}
+          <Toaster position="bottom-right"/>
         </ThemeProvider>
       </body>
     </html>

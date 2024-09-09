@@ -42,14 +42,14 @@ export function NavBar() {
       />
       <Image
         className="absolute cursor-pointer right-1/2 translate-x-1/2 top-1/2 -translate-y-1/2 ms:relative ms:right-0 ms:translate-x-0 ms:top-0 ms:-translate-y-0 md:hidden"
-        src="./icons/logoActualizatucarroM.svg"
+        src="/icons/logoActualizatucarroM.svg"
         alt="Actualiza tu carro logotipo"
         width={50}
         height={50}
         onClick={() => route.push('/')}
       />
       <Image
-        src="./icons/logoActualizatucarroD.svg"
+        src="/icons/logoActualizatucarroD.svg"
         width={200}
         height={30}
         alt="Your Company"
