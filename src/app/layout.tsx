@@ -3,6 +3,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from 'next-themes'
+import { DialogProvider } from '@/components/SupportDialog/DialogProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
