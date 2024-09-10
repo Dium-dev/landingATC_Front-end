@@ -16,12 +16,10 @@ import { PaymentMethods } from '@/components/PaymentMethods'
 import { ReviewsSkeleton } from "@/components/Reviews/ReviewsSkeleton";
 import { WhatsAppButton } from '@/components/WhatsAppButton'
 import { Suspense } from "react";
-import { NavBar } from './(nav-bar)'
 
 export default function Home() {
   return (
     <main>
-      
       <Banner />
       <Categories />
       <AboutUsBanner />
