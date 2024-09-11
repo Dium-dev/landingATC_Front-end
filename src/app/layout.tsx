@@ -19,6 +19,7 @@ export default function RootLayout({
         style={{ maxWidth: '1920px', margin: '0 auto' }}
       >
         <ThemeProvider attribute="class">
+          <DialogProvider />
           {children}
           <Toaster position="bottom-right"/>
         </ThemeProvider>

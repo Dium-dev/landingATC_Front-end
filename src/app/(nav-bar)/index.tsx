@@ -21,7 +21,7 @@ const routes: RoutesProps = [
     label: 'Tienda',
     to: 'https://shop.actualizatucarro.com/',
   },
-  { label: 'Como comprar', to: '/how-to-buy' },
+  { label: 'Como comprar', to: '/como-comprar' },
   { label: 'Blog', to: 'https://actualizatucarro.blogspot.com' },
   { label: 'Nosotros', to: '/about-us' },
 ]
