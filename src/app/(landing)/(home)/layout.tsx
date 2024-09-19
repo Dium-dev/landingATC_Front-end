@@ -1,5 +1,4 @@
-import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { NavBar } from "../(nav-bar)";
+import Footer from "@/components/Footer";
 
 export default function LandingLayout({
   children,
@@ -8,9 +7,8 @@ export default function LandingLayout({
 }>) {
   return (
     <>
-      <NavBar />
       {children}
-      <WhatsAppButton />
+      <Footer />
     </>
   );
 }

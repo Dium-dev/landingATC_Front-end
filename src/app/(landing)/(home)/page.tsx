@@ -1,7 +1,6 @@
 import Banner from '@/components/Banner'
 import Categories from '@/components/Categories'
 import { AboutUsBanner } from '@/components/AboutUsBanner'
-import Footer from '@/components/Footer'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -14,7 +13,6 @@ import BrandsCarousel from "@/components/BrandsCarousel";
 import { Reviews } from "@/components/Reviews";
 import { PaymentMethods } from '@/components/PaymentMethods'
 import { ReviewsSkeleton } from "@/components/Reviews/ReviewsSkeleton";
-import { WhatsAppButton } from '@/components/WhatsAppButton'
 import { Suspense } from "react";
 
 export default function Home() {
@@ -29,8 +27,6 @@ export default function Home() {
         <Reviews />
       </Suspense> */}
       <PaymentMethods />
-      <WhatsAppButton />
-      <Footer />
     </main>
   )
 }
