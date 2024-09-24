@@ -1,6 +1,7 @@
 'use client'
 import { Button } from '@/components/button'
 import Image from 'next/image'
+import Link from 'next/link'
 import { HiBars3 } from 'react-icons/hi2'
 import { ContactIcon, ShoppingCartIcon } from '@/assets/icons'
 import { MobileMenu } from './mobile-menu'
@@ -14,15 +15,17 @@ export type RoutesProps = Array<{
   label: string
   to: string
   sub?: Array<{ label: string; to: string }>
+  target?: string
 }>
 
 const routes: RoutesProps = [
   {
     label: 'Tienda',
     to: 'https://shop.actualizatucarro.com/',
+    target: '_blank'
   },
   { label: 'Como comprar', to: '/como-comprar' },
-  { label: 'Blog', to: 'https://actualizatucarro.blogspot.com' },
+  { label: 'Blog', to: 'https://actualizatucarro.blogspot.com', target: '_blank' },
   { label: 'Nosotros', to: '/about-us' },
 ]
 
@@ -58,16 +61,17 @@ export function NavBar() {
       />
 
       <ul className="ms:flex gap-3 mx-auto hidden md:left-1/2 md:absolute md:-translate-x-1/2 lg:gap-7">
-        {routes.map(({ label, to, sub }) => (
+        {routes.map(({ label, to, sub, target }) => (
           <li className="relative group" key={label}>
-            <Button
-              className="flex items-center gap-2 relative"
-              onClick={() => route.push(to)}
-            >
-              {' '}
-              {label}
-              {sub?.length && <CgChevronDown className="w-5 h-5 -mr-2" />}
-            </Button>
+            <Link href={to} target={target}>
+              <Button
+                className="flex items-center gap-2 relative"
+              >
+                {' '}
+                {label}
+                {sub?.length && <CgChevronDown className="w-5 h-5 -mr-2" />}
+              </Button>
+            </Link>
             {sub?.length && (
               <div
                 style={{ animation: 'popover-ani 0.5s alternate' }}
