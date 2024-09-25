@@ -163,10 +163,10 @@ export const PAYMENT_METHODS = [
 export const REVIEWS_API = process.env.REVIEWS_API || "http://localhost:3005"
 
 export const NAV_LINKS = [
-    { name: 'Tienda', path: 'https://shop.actualizatucarro.com/' },
+    { name: 'Tienda', path: 'https://shop.actualizatucarro.com/', target: '_blank' },
     { name: 'Nosotros', path: '/aboutUs' },
     { name: '¿Cómo comprar?', path: '/como-comprar' },
-    { name: 'Blog', path: 'https://actualizatucarro.blogspot.com/' },
+    { name: 'Blog', path: 'https://actualizatucarro.blogspot.com/', target: '_blank' },
 ];
 export const SOCIALMEDIA_LINKS = [
     { name: "Facebook", src: "/icons/facebook.svg", path: "" },
