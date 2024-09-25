@@ -7,7 +7,7 @@ export function SocialMedia() {
         <>
             {
                 SOCIALMEDIA_LINKS.map((item) => (
-                    <li key={item.name}>
+                    <li key={item.name} className="hover:scale-125 transition-transform">
                         <Link
                             href={item.path}
                             rel="noreferrer noopener"
