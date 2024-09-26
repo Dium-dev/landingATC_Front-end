@@ -41,7 +41,7 @@ export const SupportDialog = () => {
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
-      <DialogContent className="px-10 py-8">
+      <DialogContent className="px-10 md:py-8 overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-4xl font-bold mb-2">Contacto</DialogTitle>
           <DialogDescription>
