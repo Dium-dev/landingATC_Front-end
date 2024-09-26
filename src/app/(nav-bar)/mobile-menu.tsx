@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { useEffect, type ReactNode, useState, useRef, LegacyRef } from 'react'
-
+import { useSupportDialogStore } from '@/store/useSupportDialog'
 import { ToggleTheme } from '@/components/theme-mode'
 import { useRouter } from 'next/navigation'
 import { Button } from '@/components/button'
@@ -20,6 +20,7 @@ export function MobileMenu({ buttonValue, open, handleOPen, routes }: Props) {
   const [curIndex, setCurIndex] = useState(0)
   const handleCurIndex = (index: number) => setCurIndex(index ? index : 0)
   const route = useRouter()
+  const { onOpen } = useSupportDialogStore()
   const navRef: LegacyRef<HTMLDivElement> = useRef(null)
   const bgRef: LegacyRef<HTMLDivElement> = useRef(null)
 
@@ -106,7 +107,7 @@ export function MobileMenu({ buttonValue, open, handleOPen, routes }: Props) {
               ))}
 
               <li>
-                <Button className="w-full text-start">Contacto</Button>
+                <Button className="w-full text-start" onClick={onOpen}>Contacto</Button>
               </li>
             </ul>
             <div>
