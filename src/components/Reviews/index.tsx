@@ -3,8 +3,7 @@ import { ReviewsMarquee } from "./ReviewsMarquee";
 import { getReviews } from "@/actions/reviews";
 
 export const Reviews = async () => {
-  const reviews: Review[] = await getReviews();
-
+  const reviews: Review[] = (await getReviews()).filter((review) => review.active);
   if(!reviews.length) return null
 
   return (
@@ -12,7 +11,7 @@ export const Reviews = async () => {
       className="w-full relative"
     > 
       <div className="absolute top-0 left-0 bg-primary-lm h-2/5 w-full"/>
-      <div className="max-w-[1920px] mx-auto">
+      <div className="max-w-[1920px] mx-auto pt-2">
         <ReviewsMarquee reviews={reviews} />
       </div>
     </section>
