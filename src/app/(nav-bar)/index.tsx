@@ -65,7 +65,7 @@ export function NavBar() {
           <li className="relative group" key={label}>
             <Link href={to} target={target}>
               <Button
-                className="flex items-center gap-2 relative"
+                className="flex items-center gap-2 relative text-lg"
               >
                 {' '}
                 {label}
@@ -93,13 +93,13 @@ export function NavBar() {
         ))}
       </ul>
 
-      <ContactIcon className="w-10 h-full hidden ml-auto ms:block mr-2" onClick={onOpen} />
+      <ContactIcon className="size-10 p-0.5 hidden ml-auto ms:inline-block mr-2 hover:cursor-pointer hover:bg-primary-dm/20 rounded transition-all ease-in-out" onClick={onOpen} />
       <div className="hidden ms:block">
         <ThemeModeButton />
       </div>
       <ShoppingCartIcon
-        onClick={() => route.push(routes[0].to)}
-        className="w-10 p-0.5 h-full hover:bg-primary-dm/20 rounded relative  transition-all ease-in-out"
+        onClick={() => window.open(routes[0].to, routes[0].target)}
+        className="w-10 p-0.5 h-full hover:bg-primary-dm/20 rounded relative hover:cursor-pointer transition-all ease-in-out"
       />
     </nav>
   )
