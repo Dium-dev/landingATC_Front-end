@@ -1,6 +1,7 @@
 'use client'
 import { Button } from '@/components/button'
 import Image from 'next/image'
+import Link from 'next/link'
 import { HiBars3 } from 'react-icons/hi2'
 import { ContactIcon, ShoppingCartIcon } from '@/assets/icons'
 import { MobileMenu } from './mobile-menu'
@@ -8,25 +9,29 @@ import { useState } from 'react'
 import { ThemeModeButton } from '@/components/theme-mode'
 import { CgChevronDown } from 'react-icons/cg'
 import { useRouter } from 'next/navigation'
+import { useSupportDialogStore } from "@/store/useSupportDialog";
 
 export type RoutesProps = Array<{
   label: string
   to: string
   sub?: Array<{ label: string; to: string }>
+  target?: string
 }>
 
 const routes: RoutesProps = [
   {
     label: 'Tienda',
     to: 'https://shop.actualizatucarro.com/',
+    target: '_blank'
   },
-  { label: 'Como comprar', to: '/how-to-buy' },
-  { label: 'Blog', to: 'https://actualizatucarro.blogspot.com' },
+  { label: 'Como comprar', to: '/como-comprar' },
+  { label: 'Blog', to: 'https://actualizatucarro.blogspot.com', target: '_blank' },
   { label: 'Nosotros', to: '/about-us' },
 ]
 
 export function NavBar() {
   const [open, setOpen] = useState(false)
+  const { onOpen } = useSupportDialogStore()
   const handleOPen = () => setOpen((cur) => !cur)
   const route = useRouter()
 
@@ -40,14 +45,14 @@ export function NavBar() {
       />
       <Image
         className="absolute cursor-pointer right-1/2 translate-x-1/2 top-1/2 -translate-y-1/2 ms:relative ms:right-0 ms:translate-x-0 ms:top-0 ms:-translate-y-0 md:hidden"
-        src="./icons/logoActualizatucarroM.svg"
+        src="/icons/logoActualizatucarroM.svg"
         alt="Actualiza tu carro logotipo"
         width={50}
         height={50}
         onClick={() => route.push('/')}
       />
       <Image
-        src="./icons/logoActualizatucarroD.svg"
+        src="/icons/logoActualizatucarroD.svg"
         width={200}
         height={30}
         alt="Your Company"
@@ -56,16 +61,17 @@ export function NavBar() {
       />
 
       <ul className="ms:flex gap-3 mx-auto hidden md:left-1/2 md:absolute md:-translate-x-1/2 lg:gap-7">
-        {routes.map(({ label, to, sub }) => (
+        {routes.map(({ label, to, sub, target }) => (
           <li className="relative group" key={label}>
-            <Button
-              className="flex items-center gap-2 relative"
-              onClick={() => route.push(to)}
-            >
-              {' '}
-              {label}
-              {sub?.length && <CgChevronDown className="w-5 h-5 -mr-2" />}
-            </Button>
+            <Link href={to} target={target}>
+              <Button
+                className="flex items-center gap-2 relative"
+              >
+                {' '}
+                {label}
+                {sub?.length && <CgChevronDown className="w-5 h-5 -mr-2" />}
+              </Button>
+            </Link>
             {sub?.length && (
               <div
                 style={{ animation: 'popover-ani 0.5s alternate' }}
@@ -87,7 +93,7 @@ export function NavBar() {
         ))}
       </ul>
 
-      <ContactIcon className="w-10 h-full hidden ml-auto ms:block mr-2" />
+      <ContactIcon className="w-10 h-full hidden ml-auto ms:block mr-2" onClick={onOpen} />
       <div className="hidden ms:block">
         <ThemeModeButton />
       </div>

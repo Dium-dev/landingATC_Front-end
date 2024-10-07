@@ -142,6 +142,7 @@ export const BRANDS = [
     image: "/images/brands/volvo-logo.webp"
   },
 ]
+
 export const PAYMENT_METHODS = [
   {
     img: '/icons/contact.svg',
@@ -159,3 +160,56 @@ export const PAYMENT_METHODS = [
     description: 'Tu seguridad es nuestra prioridad. Utilizamos tecnología SSL y métodos de pago verificados para proteger tus datos sin riesgos.'
   }
 ]
+export const REVIEWS_API = process.env.REVIEWS_API || "http://localhost:3005"
+
+export const NAV_LINKS = [
+    { name: 'Tienda', path: 'https://shop.actualizatucarro.com/', target: '_blank' },
+    { name: 'Nosotros', path: '/aboutUs' },
+    { name: '¿Cómo comprar?', path: '/como-comprar' },
+    { name: 'Blog', path: 'https://actualizatucarro.blogspot.com/', target: '_blank' },
+];
+export const SOCIALMEDIA_LINKS = [
+    { name: "Facebook", src: "/icons/facebook.svg", path: "" },
+    { name: "Twitter", src: "/icons/x.svg", path: "" },
+    { name: "Youtube", src: "/icons/youtube.svg", path: "" },
+    { name: "Pinterest", src: "/icons/pinterest.svg", path: "" },
+    { name: "Instagram", src: "/icons/instagram.svg", path: "" }
+]
+export const PURCHASE_PROCESS = [
+  {
+    title: "SELECCIONAR ARTÍCULO",
+    description: "Explora nuestro catálogo en línea para encontrar el repuesto o accesorio que necesitas para tu vehículo. Puedes utilizar los filtros de búsqueda que te ayudarán a encontrar exactamente lo que buscas. Una vez que encuentres el artículo adecuado, asegúrate de revisar las especificaciones y compatibilidad con tu carro.",
+    background: '/images/buy/b1.jpg',
+    icon: '/icons/como-comprar/select-article.svg'
+  },
+  {
+    title: "AGREGAR AL CARRITO",
+    description: 'Una vez que hayas seleccionado el artículo, agrégalo a tu carrito de compras haciendo clic en el botón "Agregar al carrito". Puedes continuar navegando y añadiendo más artículos si lo deseas. Cuando estés listo para proceder con la compra, ve a tu carrito para revisar los artículos seleccionados y asegurarte de que todo esté correcto.',
+    background: '/images/buy/b2.jpg',
+    icon: '/icons/como-comprar/add-to-cart.svg'
+  },
+  {
+    title: "PAGO",
+    description: "Cuando estés listo para finalizar tu compra, procede al pago. Ofrecemos múltiples métodos de pago para tu conveniencia, incluyendo tarjetas de crédito, débito, transferencias bancarias y otros métodos electrónicos. Introduce tus datos de pago de manera segura y verifica que la información sea correcta antes de confirmar la transacción.",
+    background: '/images/buy/b3.jpg',
+    icon: '/icons/como-comprar/payment.svg'
+  },
+  {
+    title: "EMPAQUE",
+    description: "Después de confirmar tu pedido, nuestro equipo comenzará a preparar tu paquete. Nos aseguramos de que todos los artículos sean cuidadosamente empaquetados para prevenir daños durante el transporte. Utilizamos materiales de embalaje de alta calidad para proteger tu compra y garantizar que llegue en perfectas condiciones.",
+    background: '/images/buy/b4.jpg',
+    icon: '/icons/como-comprar/packaging.svg'
+  },
+  {
+    title: "ENVÍO",
+    description: "Una vez que tu pedido esté empaquetado, lo enviaremos a la dirección que nos proporcionaste. Trabajamos con servicios de mensajería confiables para asegurar una entrega rápida y segura. Te enviaremos un número de seguimiento para que puedas monitorear el estado de tu envío en tiempo real.",
+    background: '/images/buy/b5.jpg',
+    icon: '/icons/como-comprar/shipping.svg'
+  },
+  {
+    title: "ARTÍCULO RECIBIDO",
+    description: "Cuando recibas tu pedido, asegúrate de revisar todos los artículos para confirmar que están en buen estado y que coinciden con tu compra. Si tienes alguna duda o problema con tu pedido, no dudes en contactarnos para recibir asistencia. Estamos aquí para asegurarnos de que tengas una experiencia de compra satisfactoria.",
+    background: '/images/buy/b6.jpg',
+    icon: '/icons/como-comprar/received.svg'
+  },
+];

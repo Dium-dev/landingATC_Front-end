@@ -13,7 +13,6 @@ import BrandsCarousel from "@/components/BrandsCarousel";
 import { Reviews } from "@/components/Reviews";
 import { PaymentMethods } from '@/components/PaymentMethods'
 import { ReviewsSkeleton } from "@/components/Reviews/ReviewsSkeleton";
-import { WhatsAppButton } from '@/components/WhatsAppButton'
 import { Suspense } from "react";
 
 export default function Home() {
@@ -24,11 +23,10 @@ export default function Home() {
       <AboutUsBanner />
       <BrandsCarousel />
       <Blog />
-      <Suspense fallback={<ReviewsSkeleton />}>
+      {/* <Suspense fallback={<ReviewsSkeleton />}>
         <Reviews />
-      </Suspense>
+      </Suspense> */}
       <PaymentMethods />
-      <WhatsAppButton />
     </main>
   )
 }

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { useEffect, type ReactNode, useState, useRef, LegacyRef } from 'react'
-
+import { useSupportDialogStore } from '@/store/useSupportDialog'
 import { ToggleTheme } from '@/components/theme-mode'
 import { useRouter } from 'next/navigation'
 import { Button } from '@/components/button'
@@ -20,6 +20,7 @@ export function MobileMenu({ buttonValue, open, handleOPen, routes }: Props) {
   const [curIndex, setCurIndex] = useState(0)
   const handleCurIndex = (index: number) => setCurIndex(index ? index : 0)
   const route = useRouter()
+  const { onOpen } = useSupportDialogStore()
   const navRef: LegacyRef<HTMLDivElement> = useRef(null)
   const bgRef: LegacyRef<HTMLDivElement> = useRef(null)
 
@@ -77,35 +78,36 @@ export function MobileMenu({ buttonValue, open, handleOPen, routes }: Props) {
               </button>
             </header>
             <ul className="space-y-3">
-              {routes.map(({ label, to, sub }) => (
+              {routes.map(({ label, to, sub, target }) => (
                 <li
                   className="transition-all ease-in-out"
                   key={label}
-                  onClick={() => route.push(to)}
                 >
-                  <div className="flex items-center">
-                    <Button className="w-full text-start">{'' + label}</Button>
-                    {sub && (
-                      <Button
-                        className="w-1/5"
-                        onClick={(evt) => {
-                          evt.stopPropagation()
-                          handleCurIndex(curIndex === 1 ? 0 : 1)
-                        }}
-                      >
-                        <FiChevronDown className="w-full h-full" />
-                      </Button>
-                    )}
-                  </div>
+                  <Link href={to} target={target}>
+                    <div className="flex items-center">
+                      <Button className="w-full text-start">{'' + label}</Button>
+                      {sub && (
+                        <Button
+                          className="w-1/5"
+                          onClick={(evt) => {
+                            evt.stopPropagation()
+                            handleCurIndex(curIndex === 1 ? 0 : 1)
+                          }}
+                        >
+                          <FiChevronDown className="w-full h-full" />
+                        </Button>
+                      )}
+                    </div>
 
-                  {sub && (
-                    <Accordion index={1} current={curIndex} values={sub} />
-                  )}
+                    {sub && (
+                      <Accordion index={1} current={curIndex} values={sub} />
+                    )}
+                  </Link>
                 </li>
               ))}
 
               <li>
-                <Button className="w-full text-start">Contacto</Button>
+                <Button className="w-full text-start" onClick={onOpen}>Contacto</Button>
               </li>
             </ul>
             <div>

@@ -23,7 +23,7 @@ export const ReviewCard = ({ review }: ReviewCardProps) => {
         <div className="flex flex-col justify-center items-center ms:items-start">
           <p className="text-lg">{review.user}</p>
           <StarRatings
-            rating={3}
+            rating={+review.rating}
             numberOfStars={5}
             starRatedColor="orange"
             starDimension="30px"
