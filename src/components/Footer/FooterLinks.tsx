@@ -7,7 +7,7 @@ export function SocialMedia() {
         <>
             {
                 SOCIALMEDIA_LINKS.map((item) => (
-                    <li key={item.name}>
+                    <li key={item.name} className="hover:scale-125 transition-transform">
                         <Link
                             href={item.path}
                             rel="noreferrer noopener"
@@ -37,7 +37,7 @@ export function NavLinks() {
                     <li key={item.name} className="relative flex items-center justify-center xs:px-[.5em] ms:px-[.8em] after:absolute after:content-none xs:after:content-[''] after:right-[-4px] after:-translate-x-1/2 after:h-[1em] after:w-[4px] after:bg-secondary-lm">
                         <Link
                             href={item.path}
-                            target="_blank"
+                            target={item.target}
                             className="relative inline-block text-center after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2.5px] after:bg-secondary-lm after:scale-x-0 after:transform after:origin-bottom-right after:transition-transform hover:after:scale-x-100 hover:after:origin-bottom-left"
                         >
                             {item.name}
