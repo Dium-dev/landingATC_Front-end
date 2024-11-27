@@ -36,7 +36,7 @@ export function NavBar() {
   const route = useRouter()
 
   return (
-    <nav className="text-text-lm sticky top-0 z-40 backdrop-blur-sm px-4 py-4 justify-between flex items-center bg-background-lm/90 dark:bg-background-dm/90 shadow-md dark:text-text-dm">
+    <nav className="text-text-lm sticky top-0 z-40 backdrop-blur-sm p-4 justify-between flex items-center bg-background-lm/90 dark:bg-background-dm/90 shadow-md dark:text-text-dm">
       <MobileMenu
         routes={routes}
         buttonValue={<HiBars3 className="w-full h-full" />}
