@@ -14,7 +14,7 @@ export const InfoCard = ({ title, description, img }: InfoCardProps) => {
         <h3 className="text-primary-lm font-bold text-lg ms:text-xl md:text-2xl">
           {title}
         </h3>
-        <p className="text-center w-4/5 text-base md:text-lg text-black/55">
+        <p className="text-center w-4/5 text-base md:text-lg text-black/55 dark:text-white">
           {description}
         </p>
       </div>
