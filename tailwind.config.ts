@@ -21,6 +21,10 @@ const config = {
       },
     },
     extend: {
+      fontSize: {
+        "paragraph": "18px",
+        "header": "24px"
+      },
       colors: {
         "background-lm": "#f1f1f1",
         "background-dm": "#13131d",

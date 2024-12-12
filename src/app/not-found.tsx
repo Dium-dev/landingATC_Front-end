@@ -5,7 +5,7 @@ import Link from "next/link";
 const NotFoundPage: FC = () => {
   return (
     <section className="flex flex-col items-center justify-center h-screen w-screen gap-9 p-12">
-      <h1 className="text-center text-2xl">
+      <h1 className="text-center text-header">
         La pagina que estas buscando no parece existir
       </h1>
       <div>

@@ -7,7 +7,7 @@ export const AboutUsBanner = () => {
       <div className="md:w-1/4 lg:w-1/3 space-y-2 ms:space-y-6 h-min">
         <div className="flex justify-between items-center gap-x-6">
           <Link href={"about"}>
-            <h2 className="text-2xl xs:text-4xl ms:text-5xl text-primary-lm font-bold hover:underline">
+            <h2 className="text-header xs:text-4xl ms:text-5xl text-primary-lm font-bold hover:underline">
               Quienes somos
             </h2>
           </Link>
@@ -21,7 +21,7 @@ export const AboutUsBanner = () => {
             />
           </Link>
         </div>
-        <p className="text-sm xs:text-lg ms:text-xl md:text-base lg:text-2xl ml-4 ms:ml-10 md:ml-2 lg:ml-5">
+        <p className="text-sm xs:text-paragraph ms:text-xl md:text-base lg:text-header ml-4 ms:ml-10 md:ml-2 lg:ml-5">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil aut
           aperiam quasi, id perferendis error nesciunt architecto ipsa magni
           alias eveniet consequatur totam illo fuga ad explicabo, aspernatur

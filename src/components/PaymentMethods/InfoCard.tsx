@@ -11,10 +11,10 @@ export const InfoCard = ({ title, description, img }: InfoCardProps) => {
     <article className="w-full flex flex-col items-center gap-y-1">
       <Image src={img} width={85} height={85} alt={description} />
       <div className="flex flex-col items-center gap-y-1 flex-1">
-        <h3 className="text-primary-lm font-bold text-lg ms:text-xl md:text-2xl">
+        <h3 className="text-primary-lm font-bold text-paragraph ms:text-xl md:text-header">
           {title}
         </h3>
-        <p className="text-center w-4/5 text-base md:text-lg text-black/55 dark:text-white">
+        <p className="text-center w-4/5 text-base md:text-paragraph text-black/55 dark:text-white">
           {description}
         </p>
       </div>
