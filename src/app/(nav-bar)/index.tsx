@@ -26,7 +26,7 @@ const routes: RoutesProps = [
   },
   { label: 'Como comprar', to: '/como-comprar' },
   { label: 'Blog', to: 'https://actualizatucarro.blogspot.com', target: '_blank' },
-  { label: 'Nosotros', to: '/about-us' },
+  { label: 'Nosotros', to: '/sobre-nosotros' },
 ]
 
 export function NavBar() {
