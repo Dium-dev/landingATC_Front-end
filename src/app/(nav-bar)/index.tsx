@@ -65,7 +65,7 @@ export function NavBar() {
           <li className="relative group" key={label}>
             <Link href={to} target={target}>
               <Button
-                className="flex items-center gap-2 relative text-lg"
+                className="flex items-center gap-2 relative text-paragraph"
               >
                 {' '}
                 {label}

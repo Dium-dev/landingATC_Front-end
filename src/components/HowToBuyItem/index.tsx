@@ -37,9 +37,9 @@ export const HowToBuyItem = ({
               className="drop-shadow-lg"
             />
           </div>
-          <h2 className="text-lg md:text-xl lg:text-2xl font-bold">{title}</h2>
+          <h2 className="text-paragraph md:text-xl lg:text-header font-bold">{title}</h2>
         </div>
-        <p className="lg:text-lg">{description}</p>
+        <p className="lg:text-paragraph">{description}</p>
       </div>
     </div>
   );

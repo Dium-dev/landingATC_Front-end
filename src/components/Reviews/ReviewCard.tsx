@@ -21,7 +21,7 @@ export const ReviewCard = ({ review }: ReviewCardProps) => {
       <div className="flex flex-col ms:flex-row items-center gap-x-3">
         <IoPersonCircleSharp size={50} />
         <div className="flex flex-col justify-center items-center ms:items-start">
-          <p className="text-lg">{review.user}</p>
+          <p className="text-paragraph">{review.user}</p>
           <StarRatings
             rating={+review.rating}
             numberOfStars={5}
