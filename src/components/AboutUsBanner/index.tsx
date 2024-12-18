@@ -6,12 +6,12 @@ export const AboutUsBanner = () => {
     <section className="flex items-center justify-evenly w-full py-7 ms:py-12 gap-x-12 px-3 xs:px-8 md:px-4 lg:px-0 max-w-f-hd mx-auto">
       <div className="md:w-1/4 lg:w-1/3 space-y-2 ms:space-y-6 h-min">
         <div className="flex justify-between items-center gap-x-6">
-          <Link href={"about"}>
+          <Link href={"/sobre-nosotros"}>
             <h2 className="text-header xs:text-4xl ms:text-5xl text-primary-lm font-bold hover:underline">
               Quienes somos
             </h2>
           </Link>
-          <Link href={"about"} className="hover:scale-125 transition">
+          <Link href={"/sobre-nosotros"} className="hover:scale-125 transition">
             <Image
               src={"/images/roundLogo.webp"}
               alt="Logo ATC"
@@ -31,7 +31,7 @@ export const AboutUsBanner = () => {
           veniam. Impedit, quia qui! Illum delectus repellendus eum hic
           recusandae neque rem commodi dolores suscipit soluta, expedita libero,
           voluptatem sunt qui quidem quaerat.{" "}
-          <Link href={"about"}>
+          <Link href={"/sobre-nosotros"}>
             <span className="text-primary-lm font-bold hover:underline">
               Leer más...
             </span>
@@ -45,7 +45,7 @@ export const AboutUsBanner = () => {
           width={650}
           height={650}
         />
-        <Link href={"about"}>
+        <Link href={"/sobre-nosotros"}>
           <Image
             src={"/images/roundLogo.webp"}
             alt="Logo ATC"
