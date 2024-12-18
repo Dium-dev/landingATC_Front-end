@@ -9,7 +9,7 @@ interface CategoryCardProps {
 
 const CategoryCard: FC<CategoryCardProps> = ({ image, name }) => {
   return (
-    <Link href={"https://actualizatucarro.mercadoshops.com.co/"}>
+    <Link href={"https://actualizatucarro.mercadoshops.com.co/"} target="_blank">
       <div className="flex flex-col items-center justify-center gap-x-4 relative group">
         <Image src={image} width={150} height={150} alt={name} className="group-hover:scale-125 transition-all aspect-square" />
         <span className="font-bold text-xs ms:text-sm md:text-paragraph ms:group-hover:text-xl transition-all">{name}</span>
