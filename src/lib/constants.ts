@@ -164,16 +164,16 @@ export const REVIEWS_API = process.env.REVIEWS_API || "http://localhost:3005"
 
 export const NAV_LINKS = [
     { name: 'Tienda', path: 'https://shop.actualizatucarro.com/', target: '_blank' },
-    { name: 'Nosotros', path: '/aboutUs' },
+    { name: 'Nosotros', path: '/sobre-nosotros' },
     { name: '¿Cómo comprar?', path: '/como-comprar' },
     { name: 'Blog', path: 'https://actualizatucarro.blogspot.com/', target: '_blank' },
 ];
 export const SOCIALMEDIA_LINKS = [
-    { name: "Facebook", src: "/icons/facebook.svg", path: "" },
-    { name: "Twitter", src: "/icons/x.svg", path: "" },
-    { name: "Youtube", src: "/icons/youtube.svg", path: "" },
-    { name: "Pinterest", src: "/icons/pinterest.svg", path: "" },
-    { name: "Instagram", src: "/icons/instagram.svg", path: "" }
+    { name: "Facebook", src: "/icons/facebook.svg", path: "https://www.facebook.com" },
+    { name: "Twitter", src: "/icons/x.svg", path: "https://x.com" },
+    { name: "Youtube", src: "/icons/youtube.svg", path: "https://www.youtube.com" },
+    { name: "Pinterest", src: "/icons/pinterest.svg", path: "https://www.pinterest.com" },
+    { name: "Instagram", src: "/icons/instagram.svg", path: "https://www.instagram.com" }
 ]
 export const PURCHASE_PROCESS = [
   {
