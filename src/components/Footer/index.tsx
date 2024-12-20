@@ -29,7 +29,7 @@ function Footer({ }) {
 
     return (
         // <footer className="flex flex-col items-center justify-center w-full px-2 md:px-[100px] pt-[32px] md:pt-[100px] pb-[20px] md:pb-[25px] bg-[#1C2023] text-white">
-        <footer className="relative flex flex-col items-center justify-center w-full px-[20px] md:px-[100px] pt-[30px] md:pt-[60px] pb-[15px] md:pb-[25px] bg-[#1C2023] text-white">
+        <footer className="relative flex flex-col items-center justify-center w-full px-[20px] md:px-[100px] pt-[30px] md:pt-[60px] pb-[15px] md:pb-[25px] bg-[#1C2023] text-white max-w-f-hd mx-auto">
             <div className='overflow-hidden absolute top-0 left-0 w-full h-full'>
                 <Image
                     src={bgLogo}

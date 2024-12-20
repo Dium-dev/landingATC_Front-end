@@ -8,7 +8,9 @@ export default function LandingLayout({
 }>) {
   return (
     <>
-      <NavBar />
+      <div className="bg-background-lm/90 dark:bg-background-dm/90 w-full">
+        <NavBar />
+      </div>
       {children}
       <WhatsAppButton />
     </>
