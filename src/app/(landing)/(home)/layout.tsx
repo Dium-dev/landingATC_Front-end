@@ -8,7 +8,9 @@ export default function LandingLayout({
   return (
     <>
       {children}
-      <Footer />
+      <div className="bg-[#1C2023]">
+        <Footer />
+      </div>
     </>
   );
 }

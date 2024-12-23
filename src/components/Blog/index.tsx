@@ -5,9 +5,9 @@ import { FC } from "react";
 
 const Blog: FC = () => {
   return (
-    <section className="w-full bg-black">
+    <section className="max-w-f-hd mx-auto">
       <Link
-        className="bg-cover bg-center bg-no-repeat bg-fixed bg-banner flex items-center justify-center max-w-[1920px] mx-auto px-4 ms:px-0"
+        className="bg-cover bg-center bg-no-repeat bg-fixed bg-banner flex items-center justify-center max-w-f-hd mx-auto px-4 ms:px-0"
         href={"https://actualizatucarro.blogspot.com"}
         target="_blank"
       >
